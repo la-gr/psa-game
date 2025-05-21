@@ -1,2 +1,6 @@
 # Godot 4+ specific ignores
 .godot/
+<<<<<<< HEAD
+=======
+/android/
+>>>>>>> 4a8725bbca45b303d637e1f3bc17356957dea1be

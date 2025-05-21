@@ -10,8 +10,13 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
 config/name="PSA"
 config/features=PackedStringArray("4.1", "Mobile")
+=======
+config/name="psa game"
+config/features=PackedStringArray("4.4", "Mobile")
+>>>>>>> 4a8725bbca45b303d637e1f3bc17356957dea1be
 config/icon="res://icon.svg"
 
 [editor]
