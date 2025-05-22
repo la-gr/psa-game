@@ -11,11 +11,18 @@ config_version=5
 [application]
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 config/name="psas game"
 =======
+=======
+>>>>>>> e27735854c8750eb28a2b22eee119ce7dac59574
 config/name="PSA"
 >>>>>>> 4800f3c80a3e79679e9abb9e7faddaff7b01e584
 config/features=PackedStringArray("4.1", "Mobile")
+=======
+config/name="psa game"
+config/features=PackedStringArray("4.4", "Mobile")
+>>>>>>> 4a8725bbca45b303d637e1f3bc17356957dea1be
 config/icon="res://icon.svg"
 
 [editor]
