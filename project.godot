@@ -12,8 +12,11 @@ config_version=5
 
 config/name="psas game"
 <<<<<<< HEAD
+<<<<<<< HEAD
 config/features=PackedStringArray("4.4", "Mobile")
 =======
+=======
+>>>>>>> 6170b874a19022db655e303008c6ea19fc953320
 run/main_scene="res://mainscreen.tscn"
 config/features=PackedStringArray("4.1", "Mobile")
 >>>>>>> 6170b874a19022db655e303008c6ea19fc953320
