@@ -10,21 +10,9 @@ config_version=5
 
 [application]
 
-config/name="psas game"
-<<<<<<< HEAD
+config/name="psa"
 config/features=PackedStringArray("4.4", "Mobile")
-=======
-run/main_scene="res://mainscreen.tscn"
-config/features=PackedStringArray("4.1", "Mobile")
->>>>>>> 6170b874a19022db655e303008c6ea19fc953320
 config/icon="res://icon.svg"
-
-[display]
-
-window/size/viewport_width=1920
-window/size/viewport_height=1080
-window/size/mode=2
-window/stretch/mode="canvas_items"
 
 [editor]
 

@@ -1,0 +1,90 @@
+[gd_scene load_steps=12 format=3 uid="uid://dgqcgvuxbsfvt"]
+
+[ext_resource type="Script" path="res://MainMenu.gd" id="1_kui8e"]
+[ext_resource type="Texture2D" uid="uid://c8l1tjk2x1xl" path="res://icons/temp title.png" id="2_8fn4r"]
+[ext_resource type="Texture2D" uid="uid://dcxno6sw1im6q" path="res://icons/temp play.png" id="3_huavm"]
+[ext_resource type="Texture2D" uid="uid://bskcnk8ivexnl" path="res://icons/temp options.png" id="4_luk67"]
+[ext_resource type="Texture2D" uid="uid://cdo0bgg22oh22" path="res://icons/temp help.png" id="5_etpox"]
+[ext_resource type="Texture2D" uid="uid://lvqp3uacw1g1" path="res://icons/temp exit.png" id="6_hn4n6"]
+[ext_resource type="Texture2D" uid="uid://k25rprw6uxyw" path="res://icons/ad1.png" id="7_4ydbd"]
+[ext_resource type="Texture2D" uid="uid://csg2552nyv356" path="res://icons/ad2.png" id="8_vue7p"]
+
+[sub_resource type="Gradient" id="Gradient_x1tlb"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qirm2"]
+gradient = SubResource("Gradient_x1tlb")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4ag8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4ydbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vue7p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kui8e")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(964, 548)
+scale = Vector2(7.71875, 1144)
+texture = SubResource("GradientTexture1D_qirm2")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(946.688, 171.5)
+scale = Vector2(1.05975, 1.25625)
+texture = ExtResource("2_8fn4r")
+
+[node name="PLay" type="Button" parent="."]
+offset_left = 696.0
+offset_top = 384.0
+offset_right = 1192.0
+offset_bottom = 592.0
+icon = ExtResource("3_huavm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PLay2" type="Button" parent="."]
+offset_left = 560.0
+offset_top = 640.0
+offset_right = 888.0
+offset_bottom = 784.0
+icon = ExtResource("4_luk67")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PLay3" type="Button" parent="."]
+offset_left = 912.0
+offset_top = 648.0
+offset_right = 1264.0
+offset_bottom = 768.0
+icon = ExtResource("5_etpox")
+icon_alignment = 1
+expand_icon = true
+
+[node name="PLay4" type="Button" parent="."]
+offset_left = 856.0
+offset_top = 992.0
+offset_right = 992.0
+offset_bottom = 1048.0
+icon = ExtResource("6_hn4n6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Ad1" type="AnimatedSprite2D" parent="."]
+position = Vector2(196.75, 536.406)
+scale = Vector2(1.25202, 1.97101)
+sprite_frames = SubResource("SpriteFrames_n4ag8")
+
+[node name="Ad2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1700, 544)
+scale = Vector2(0.920716, 1.69231)
+sprite_frames = SubResource("SpriteFrames_n4ag8")
+frame = 1
+frame_progress = 0.545454
