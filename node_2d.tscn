@@ -1,3 +1,56 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+[gd_scene load_steps=8 format=3 uid="uid://d3uwnkcbwp6mq"]
+=======
+[gd_scene format=3 uid="uid://6y3ccua8ien7"]
+>>>>>>> 6170b874a19022db655e303008c6ea19fc953320
+
+[ext_resource type="Script" uid="uid://cftxudbymaiue" path="res://blackMar.gd" id="1_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://608uv7gpkc7j" path="res://images_game/hand1.png" id="2_kdubu"]
+[ext_resource type="Texture2D" uid="uid://c0fh5h80wotta" path="res://images_game/point1.png" id="3_d21ai"]
+[ext_resource type="Texture2D" uid="uid://bbyn75rw8pof" path="res://images_game/hand2.png" id="4_rj586"]
+[ext_resource type="Texture2D" uid="uid://bukn6uyw7f1je" path="res://images_game/point2.png" id="5_4d7sh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ir8iy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kdubu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_d21ai")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqns4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_rj586")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4d7sh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="blackMarket" type="Node2D"]
+script = ExtResource("1_q6r6c")
+
+[node name="hand1" type="AnimatedSprite2D" parent="."]
+position = Vector2(145, 618)
+sprite_frames = SubResource("SpriteFrames_ir8iy")
+
+[node name="hand2" type="AnimatedSprite2D" parent="."]
+position = Vector2(997, 641)
+sprite_frames = SubResource("SpriteFrames_hqns4")
+=======
 [gd_scene format=3 uid="uid://6y3ccua8ien7"]
 
 [node name="Node2D" type="Node2D"]
+>>>>>>> e151b1cabeb476ebfa5db05d10921740aab694ba
