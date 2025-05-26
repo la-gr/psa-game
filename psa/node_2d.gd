@@ -7,10 +7,8 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta) -> void:
-	hands()
-
-func hands() -> void:
-	var hand2 = 2
+	pass
+	
 	
 func _input(event):
 	var hand1 = get_node("hand1");
