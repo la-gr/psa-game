@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=13 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://jynsia3s4mmn" path="res://images_game/IMG_0360.jpeg" id="5_100w2"]
 [ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
 [ext_resource type="Texture2D" uid="uid://dhoebvyj8bpce" path="res://images_game/floer.jpg" id="6_if5l4"]
+[ext_resource type="Texture2D" uid="uid://bukn6uyw7f1je" path="res://images_game/point2.png" id="10_100w2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hut4a"]
 animations = [{
@@ -18,6 +19,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_4rg1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_100w2")
 }],
 "loop": true,
 "name": &"default",
@@ -46,32 +50,7 @@ position = Vector2(578.511, 322.6)
 scale = Vector2(0.600741, 0.600741)
 texture = ExtResource("2_blukf")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-visible = false
-custom_minimum_size = Vector2(-0.035, 0)
-offset_left = 264.0
-offset_top = 32.0
-offset_right = 264.0
-offset_bottom = 32.0
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="cybertruck" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(125, 204)
-scale = Vector2(0.426282, 0.465633)
-texture = ExtResource("4_hut4a")
-
-[node name="dawg" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(369, 204)
-scale = Vector2(0.287263, 0.257453)
-texture = ExtResource("5_100w2")
-
-[node name="floer" type="Sprite2D" parent="VBoxContainer"]
-position = Vector2(127, 430)
-scale = Vector2(0.11545, 0.102188)
-texture = ExtResource("6_if5l4")
-
-[node name="screen" type="ScrollContainer" parent="."]
+[node name="scroll" type="ScrollContainer" parent="."]
 offset_left = 286.0
 offset_top = 32.0
 offset_right = 904.0
@@ -79,19 +58,19 @@ offset_bottom = 519.0
 vertical_scroll_mode = 2
 script = ExtResource("3_100w2")
 
-[node name="FlowContainer" type="FlowContainer" parent="screen"]
+[node name="FlowContainer" type="FlowContainer" parent="scroll"]
 custom_minimum_size = Vector2(300, 1500)
 layout_mode = 2
 theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 30
 
-[node name="TextureRect4" type="TextureRect" parent="screen/FlowContainer"]
+[node name="TextureRect4" type="TextureRect" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(600, 100)
 layout_mode = 2
 texture = ExtResource("5_wvdav")
 expand_mode = 1
 
-[node name="TextureRect" type="TextureRect" parent="screen/FlowContainer"]
+[node name="TextureRect" type="TextureRect" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -99,7 +78,7 @@ size_flags_vertical = 0
 texture = ExtResource("4_hut4a")
 expand_mode = 1
 
-[node name="TextureRect2" type="TextureRect" parent="screen/FlowContainer"]
+[node name="TextureRect2" type="TextureRect" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -107,7 +86,7 @@ size_flags_vertical = 0
 texture = ExtResource("5_100w2")
 expand_mode = 1
 
-[node name="TextureRect3" type="TextureRect" parent="screen/FlowContainer"]
+[node name="TextureRect3" type="TextureRect" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(300, 300)
 layout_direction = 2
 layout_mode = 2
@@ -128,10 +107,3 @@ sprite_frames = SubResource("SpriteFrames_100w2")
 centered = false
 offset = Vector2(-50, -30)
 flip_h = true
-
-[node name="title" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(477, 85)
-rotation = -0.0174533
-scale = Vector2(0.612782, 0.612782)
-texture = ExtResource("5_wvdav")
