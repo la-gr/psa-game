@@ -1,10 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dgqcgvuxbsfvt"]
+[gd_scene load_steps=12 format=3 uid="uid://bv1074abebevd"]
 
-<<<<<<< HEAD
-[ext_resource type="Script" uid="uid://c68v1lnqu8pe1" path="res://mainscreen.gd" id="1_kvqn4"]
-=======
-[ext_resource type="Script" path="res://MainMenu.gd" id="1_kui8e"]
->>>>>>> 1ba106b77473b26bc20ae8d12d95dabfbb793170
+[ext_resource type="Script" uid="uid://bv2fxxhc6vu6n" path="res://mainscreen.gd" id="1_kvqn4"]
 [ext_resource type="Texture2D" uid="uid://c8l1tjk2x1xl" path="res://icons/temp title.png" id="2_8fn4r"]
 [ext_resource type="Texture2D" uid="uid://dcxno6sw1im6q" path="res://icons/temp play.png" id="3_huavm"]
 [ext_resource type="Texture2D" uid="uid://bskcnk8ivexnl" path="res://icons/temp options.png" id="4_luk67"]
@@ -33,82 +29,67 @@ animations = [{
 }]
 
 [node name="Node2D" type="Node2D"]
-<<<<<<< HEAD
 script = ExtResource("1_kvqn4")
-=======
-script = ExtResource("1_kui8e")
->>>>>>> 1ba106b77473b26bc20ae8d12d95dabfbb793170
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(964, 548)
-scale = Vector2(7.71875, 1144)
+position = Vector2(587.5, 346)
+scale = Vector2(4.77734, 740)
 texture = SubResource("GradientTexture1D_qirm2")
 
 [node name="Title" type="Sprite2D" parent="."]
-position = Vector2(946.688, 171.5)
-scale = Vector2(1.05975, 1.25625)
+position = Vector2(568, 82)
+scale = Vector2(0.699585, 0.659375)
 texture = ExtResource("2_8fn4r")
 
-<<<<<<< HEAD
 [node name="Play" type="Button" parent="."]
-=======
-[node name="PLay" type="Button" parent="."]
->>>>>>> 1ba106b77473b26bc20ae8d12d95dabfbb793170
-offset_left = 696.0
-offset_top = 384.0
-offset_right = 1192.0
-offset_bottom = 592.0
+offset_left = 401.0
+offset_top = 237.0
+offset_right = 731.0
+offset_bottom = 361.0
 icon = ExtResource("3_huavm")
 icon_alignment = 1
 expand_icon = true
 
-<<<<<<< HEAD
 [node name="Options" type="Button" parent="."]
-=======
-[node name="PLay2" type="Button" parent="."]
->>>>>>> 1ba106b77473b26bc20ae8d12d95dabfbb793170
-offset_left = 560.0
-offset_top = 640.0
-offset_right = 888.0
-offset_bottom = 784.0
+offset_left = 336.0
+offset_top = 377.0
+offset_right = 532.0
+offset_bottom = 460.0
 icon = ExtResource("4_luk67")
 icon_alignment = 1
 expand_icon = true
 
-<<<<<<< HEAD
 [node name="Help" type="Button" parent="."]
-=======
-[node name="PLay3" type="Button" parent="."]
->>>>>>> 1ba106b77473b26bc20ae8d12d95dabfbb793170
-offset_left = 912.0
-offset_top = 648.0
-offset_right = 1264.0
-offset_bottom = 768.0
+offset_left = 550.0
+offset_top = 374.0
+offset_right = 784.0
+offset_bottom = 459.0
 icon = ExtResource("5_etpox")
 icon_alignment = 1
 expand_icon = true
 
-<<<<<<< HEAD
 [node name="Exit" type="Button" parent="."]
-=======
-[node name="PLay4" type="Button" parent="."]
->>>>>>> 1ba106b77473b26bc20ae8d12d95dabfbb793170
-offset_left = 856.0
-offset_top = 992.0
-offset_right = 992.0
-offset_bottom = 1048.0
+offset_left = 484.0
+offset_top = 541.0
+offset_right = 620.0
+offset_bottom = 597.0
 icon = ExtResource("6_hn4n6")
 icon_alignment = 1
 expand_icon = true
 
 [node name="Ad1" type="AnimatedSprite2D" parent="."]
-position = Vector2(196.75, 536.406)
-scale = Vector2(1.25202, 1.97101)
+position = Vector2(134.25, 319.406)
+scale = Vector2(0.747986, 1.1217)
 sprite_frames = SubResource("SpriteFrames_n4ag8")
 
 [node name="Ad2" type="AnimatedSprite2D" parent="."]
-position = Vector2(1700, 544)
-scale = Vector2(0.920716, 1.69231)
+position = Vector2(1008.25, 322.75)
+scale = Vector2(0.533248, 0.94311)
 sprite_frames = SubResource("SpriteFrames_n4ag8")
 frame = 1
 frame_progress = 0.545454
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
