@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=15 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://jynsia3s4mmn" path="res://images_game/IMG_0360.jpeg" id="5_100w2"]
 [ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
 [ext_resource type="Texture2D" uid="uid://dhoebvyj8bpce" path="res://images_game/floer.jpg" id="6_if5l4"]
+[ext_resource type="Texture2D" uid="uid://8xsnp4tj6rih" path="res://images_game/BUY.png" id="7_2f3bc"]
 [ext_resource type="Texture2D" uid="uid://bqyinxq28agsy" path="res://images_game/Screenshot 2025-05-28 140650.png" id="7_if5l4"]
 [ext_resource type="Texture2D" uid="uid://bukn6uyw7f1je" path="res://images_game/point2.png" id="10_100w2"]
 
@@ -63,7 +64,7 @@ script = ExtResource("3_100w2")
 custom_minimum_size = Vector2(300, 1500)
 layout_mode = 2
 theme_override_constants/h_separation = 30
-theme_override_constants/v_separation = 30
+theme_override_constants/v_separation = 20
 
 [node name="TextureRect4" type="TextureRect" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(600, 100)
@@ -87,18 +88,44 @@ size_flags_vertical = 0
 texture = ExtResource("5_100w2")
 expand_mode = 1
 
+[node name="cybtext" type="RichTextLabel" parent="scroll/FlowContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(100, 20)
+layout_direction = 2
+layout_mode = 2
+text = "CyberTruck"
+scroll_active = false
+
+[node name="Button" type="Button" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_vertical = 0
+icon = ExtResource("7_2f3bc")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="dawg2" type="RichTextLabel" parent="scroll/FlowContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "dawg"
+scroll_active = false
+
+[node name="Button2" type="Button" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_vertical = 0
+icon = ExtResource("7_2f3bc")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
 [node name="ad1" type="TextureRect" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 texture = ExtResource("7_if5l4")
 expand_mode = 1
-
-[node name="cybtext" type="RichTextLabel" parent="scroll/FlowContainer"]
-visible = false
-custom_minimum_size = Vector2(100, 50)
-layout_mode = 2
-text = "cybertruck"
-scroll_active = false
 
 [node name="flower" type="TextureRect" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(300, 300)
