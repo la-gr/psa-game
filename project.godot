@@ -10,23 +10,14 @@ config_version=5
 
 [application]
 
-<<<<<<< HEAD
 config/name="psa"
+run/main_scene="uid://dha2chfbnh26k"
 config/features=PackedStringArray("4.4", "Mobile")
-=======
-<<<<<<< HEAD
-config/name="psa"
-config/features=PackedStringArray("4.4", "Mobile")
-=======
-<<<<<<< HEAD
-config/name="psas game"
-=======
-config/name="PSA"
->>>>>>> 4800f3c80a3e79679e9abb9e7faddaff7b01e584
-config/features=PackedStringArray("4.1", "Mobile")
->>>>>>> e7b243e25a241acc5de48e0d8e0ff9c8912e14fb
->>>>>>> 1ba106b77473b26bc20ae8d12d95dabfbb793170
 config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [editor]
 
