@@ -1,0 +1,150 @@
+[gd_scene load_steps=15 format=3 uid="uid://dha2chfbnh26k"]
+
+[ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
+[ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
+[ext_resource type="Texture2D" uid="uid://608uv7gpkc7j" path="res://images_game/hand1.png" id="2_wvdav"]
+[ext_resource type="Script" uid="uid://cuwsva3g86idn" path="res://Screen.gd" id="3_100w2"]
+[ext_resource type="Texture2D" uid="uid://bbyn75rw8pof" path="res://images_game/hand2.png" id="4_4rg1m"]
+[ext_resource type="Texture2D" uid="uid://dj77txdnq5ynh" path="res://images_game/cybertruck.png" id="4_hut4a"]
+[ext_resource type="Texture2D" uid="uid://jynsia3s4mmn" path="res://images_game/IMG_0360.jpeg" id="5_100w2"]
+[ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
+[ext_resource type="Texture2D" uid="uid://dhoebvyj8bpce" path="res://images_game/floer.jpg" id="6_if5l4"]
+[ext_resource type="Texture2D" uid="uid://8xsnp4tj6rih" path="res://images_game/BUY.png" id="7_2f3bc"]
+[ext_resource type="Texture2D" uid="uid://bqyinxq28agsy" path="res://images_game/Screenshot 2025-05-28 140650.png" id="7_if5l4"]
+[ext_resource type="Texture2D" uid="uid://bukn6uyw7f1je" path="res://images_game/point2.png" id="10_100w2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hut4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wvdav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4rg1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_100w2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_100w2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wvdav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4rg1m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="black market" type="Node2D"]
+script = ExtResource("1_tmppq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578.511, 322.6)
+scale = Vector2(0.600741, 0.600741)
+texture = ExtResource("2_blukf")
+
+[node name="scroll" type="ScrollContainer" parent="."]
+offset_left = 286.0
+offset_top = 32.0
+offset_right = 904.0
+offset_bottom = 519.0
+vertical_scroll_mode = 2
+script = ExtResource("3_100w2")
+
+[node name="FlowContainer" type="FlowContainer" parent="scroll"]
+custom_minimum_size = Vector2(300, 1500)
+layout_mode = 2
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 20
+
+[node name="TextureRect4" type="TextureRect" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 2
+texture = ExtResource("5_wvdav")
+expand_mode = 1
+
+[node name="cybertruck" type="TextureRect" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_hut4a")
+expand_mode = 1
+
+[node name="dawg" type="TextureRect" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("5_100w2")
+expand_mode = 1
+
+[node name="cybtext" type="RichTextLabel" parent="scroll/FlowContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(100, 20)
+layout_direction = 2
+layout_mode = 2
+text = "CyberTruck"
+scroll_active = false
+
+[node name="Button" type="Button" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_vertical = 0
+icon = ExtResource("7_2f3bc")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="dawg2" type="RichTextLabel" parent="scroll/FlowContainer"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "dawg"
+scroll_active = false
+
+[node name="Button2" type="Button" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(100, 60)
+layout_mode = 2
+size_flags_vertical = 0
+icon = ExtResource("7_2f3bc")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="ad1" type="TextureRect" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+texture = ExtResource("7_if5l4")
+expand_mode = 1
+
+[node name="flower" type="TextureRect" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_direction = 2
+layout_mode = 2
+texture = ExtResource("6_if5l4")
+expand_mode = 1
+
+[node name="hand1" type="AnimatedSprite2D" parent="."]
+position = Vector2(843, 421)
+scale = Vector2(0.76, 0.76)
+sprite_frames = SubResource("SpriteFrames_hut4a")
+centered = false
+offset = Vector2(-60, -100)
+
+[node name="hand2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-391, 391)
+scale = Vector2(0.775, 0.775)
+sprite_frames = SubResource("SpriteFrames_100w2")
+centered = false
+offset = Vector2(-50, -30)
+flip_h = true
