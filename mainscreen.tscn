@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bv1074abebevd"]
+[gd_scene load_steps=14 format=3 uid="uid://bv1074abebevd"]
 
 [ext_resource type="Script" uid="uid://bv2fxxhc6vu6n" path="res://mainscreen.gd" id="1_kvqn4"]
 [ext_resource type="Texture2D" uid="uid://c8l1tjk2x1xl" path="res://icons/temp title.png" id="2_8fn4r"]
 [ext_resource type="Texture2D" uid="uid://dcxno6sw1im6q" path="res://icons/temp play.png" id="3_huavm"]
 [ext_resource type="Texture2D" uid="uid://bskcnk8ivexnl" path="res://icons/temp options.png" id="4_luk67"]
+[ext_resource type="Script" uid="uid://c1txns0f6so4d" path="res://volume_slider.gd" id="5_6of4a"]
 [ext_resource type="Texture2D" uid="uid://cdo0bgg22oh22" path="res://icons/temp help.png" id="5_etpox"]
 [ext_resource type="Texture2D" uid="uid://lvqp3uacw1g1" path="res://icons/temp exit.png" id="6_hn4n6"]
 [ext_resource type="Texture2D" uid="uid://k25rprw6uxyw" path="res://icons/ad1.png" id="7_4ydbd"]
@@ -108,7 +109,8 @@ icon = ExtResource("4_luk67")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Options2" type="Panel" parent="."]
+[node name="OptionsMenu" type="Panel" parent="."]
+visible = false
 z_index = 5
 offset_left = 243.0
 offset_top = 223.0
@@ -118,7 +120,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_kvqn4")
 
-[node name="Level Select VBox" type="VBoxContainer" parent="Options2"]
+[node name="OptionsMenu VBox" type="VBoxContainer" parent="OptionsMenu"]
 z_index = 5
 offset_top = 12.0
 offset_right = 649.0
@@ -126,34 +128,72 @@ offset_bottom = 318.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="Options2/Level Select VBox"]
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox"]
 z_index = 7
 layout_mode = 2
 text = "Options"
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Options2/Level Select VBox"]
+[node name="VolumeSliderVBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Options2/Level Select VBox/VBoxContainer"]
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderVBox"]
 layout_mode = 2
 text = "Volume"
 
-[node name="Volume Slider" type="HSlider" parent="Options2/Level Select VBox/VBoxContainer"]
+[node name="Volume Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderVBox"]
 layout_mode = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_6of4a")
 
-[node name="ExitLevels" type="Button" parent="Options2/Level Select VBox"]
+[node name="ExitOptions" type="Button" parent="OptionsMenu/OptionsMenu VBox"]
 layout_mode = 2
 text = "Back"
 
 [node name="Help" type="Button" parent="."]
-offset_left = 479.0
-offset_top = 343.0
-offset_right = 713.0
-offset_bottom = 428.0
+offset_left = 572.0
+offset_top = 373.0
+offset_right = 806.0
+offset_bottom = 458.0
 icon = ExtResource("5_etpox")
 icon_alignment = 1
 expand_icon = true
+
+[node name="HelpPanel" type="Panel" parent="."]
+z_index = 5
+offset_left = 236.0
+offset_top = 192.0
+offset_right = 885.0
+offset_bottom = 510.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_kvqn4")
+
+[node name="HelpVBox" type="VBoxContainer" parent="HelpPanel"]
+z_index = 5
+offset_top = 12.0
+offset_right = 649.0
+offset_bottom = 318.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HelpPanel/HelpVBox"]
+z_index = 7
+layout_mode = 2
+text = "Help"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel/HelpVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "The black market is a serious problem that can affect anyone—even kids. It involves people secretly buying and selling things without following the law. These things can include unsafe toys, fake electronics, harmful medicine, or even stolen items. While they might seem cheaper or easy to get, they are often dangerous and can hurt you or others. The people behind black market sales don’t care about safety or fairness—they only want to make money, no matter who gets hurt. Getting involved in this kind of illegal activity, even by accident, can lead to serious consequences, including putting yourself or your family at risk. That’s why it’s important to stay away from anything that feels suspicious, and to always buy from trusted, legal sources. If you ever find yourself on the black market, if someone tries to sell you something secretly, or if you’re unsure whether something is safe or legal, talk to a parent, teacher, or another adult you trust right away. You can also report any suspicious activity to the proper authorities. To get help or report a concern, contact your local police department or reach out to Crime Stoppers at 1-800-222-TIPS (8477). You can also visit www.cybertip.ca to report anything unsafe online. Your safety matters. Make smart choices, and say no to the black market.
+
+"
+
+[node name="ExitHelp" type="Button" parent="HelpPanel/HelpVBox"]
+layout_mode = 2
+text = "Back"
 
 [node name="Exit" type="Button" parent="."]
 offset_left = 484.0
@@ -180,6 +220,9 @@ frame_progress = 0.545454
 [connection signal="pressed" from="Level Select/Level Select VBox/Episodes/BlackMarket" to="." method="_on_black_market_pressed"]
 [connection signal="pressed" from="Level Select/Level Select VBox/ExitLevels" to="." method="_on_exit_levels_pressed"]
 [connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="Options2/Level Select VBox/ExitLevels" to="." method="_on_exit_levels_pressed"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderVBox/Volume Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderVBox/Volume Slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderVBox/Volume Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderVBox/Volume Slider" method="_on_value_changed"]
+[connection signal="pressed" from="OptionsMenu/OptionsMenu VBox/ExitOptions" to="." method="_on_exit_options_pressed"]
 [connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="HelpPanel/HelpVBox/ExitHelp" to="." method="_on_exit_help_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
