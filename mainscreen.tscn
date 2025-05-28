@@ -68,6 +68,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kvqn4")
 
 [node name="Level Select VBox" type="VBoxContainer" parent="Level Select"]
 z_index = 5
+layout_mode = 0
 offset_top = 12.0
 offset_right = 649.0
 offset_bottom = 318.0
@@ -122,6 +123,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kvqn4")
 
 [node name="OptionsMenu VBox" type="VBoxContainer" parent="OptionsMenu"]
 z_index = 5
+layout_mode = 0
 offset_top = 12.0
 offset_right = 649.0
 offset_bottom = 318.0
@@ -172,6 +174,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_kvqn4")
 
 [node name="HelpVBox" type="VBoxContainer" parent="HelpPanel"]
 z_index = 5
+layout_mode = 0
 offset_top = 12.0
 offset_right = 649.0
 offset_bottom = 318.0

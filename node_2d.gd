@@ -1,4 +1,5 @@
 extends Node2D
+<<<<<<< HEAD
 #black market
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
@@ -24,3 +25,5 @@ func _input(event):
 		tween.kill() # Abort the previous animation.
 		tween = create_tween()
 		tween.tween_property(hand1, "position", Vector2(843.0, 421.0), 0.2)
+=======
+>>>>>>> fff1480f304bac2af3f7053944a0d759f2191ac8

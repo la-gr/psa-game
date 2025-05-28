@@ -1,5 +1,6 @@
 extends Node2D
 #black market
+<<<<<<< HEAD
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
 	var hand1 = get_node("hand1")
@@ -19,3 +20,5 @@ func _input(event):
 	if event is InputEventMouseButton:
 		hand2.position(event.position)
 		print(event.position)
+=======
+>>>>>>> fff1480f304bac2af3f7053944a0d759f2191ac8
