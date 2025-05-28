@@ -15,12 +15,14 @@ func _input(event):
 	var hand1 = get_node("hand1");
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton:
-		if (920 > event.position.x > 880):
-			pass
-		hand1.set_frame(1)
+		var b = event.position.x
+		if (880 < b) && (b < 920):
+			hand1.set_frame(2)
+			#make it follow later
+		else:
+			hand1.set_frame(1)
 		tween = create_tween()
 		tween.tween_property(hand1, "position", event.position, 0.2)
-		#hand2.position=event.position
 		await get_tree().create_timer(0.5).timeout #waits
 		hand1.set_frame(0)
 		await get_tree().create_timer(0.2).timeout #waits
