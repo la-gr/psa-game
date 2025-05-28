@@ -8,15 +8,11 @@ func _ready():
 	var exit = get_node("Exit")
 	var lvlSelect = get_node("Level Select")
 	var optionsMenu = get_node("OptionsMenu")
+	var helpPanel = get_node("HelpPanel")
 	
 	lvlSelect.set_visible(false)
 	optionsMenu.set_visible(false)
-	
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass	
+	helpPanel.set_visible(false)
 	
 
 #called when play button is pressed
@@ -32,7 +28,8 @@ func _on_options_pressed() -> void:
 
 #called when help button is pressed
 func _on_help_pressed() -> void:
-	pass # Replace with function body.
+	var helpPanel = get_node("HelpPanel")
+	helpPanel.set_visible(true)
 
 #called when exit button is pressed
 func _on_exit_pressed() -> void:
@@ -49,4 +46,10 @@ func _on_exit_levels_pressed() -> void:
 
 
 func _on_exit_options_pressed() -> void:
-	pass # Replace with function body.
+	var optionsMenu = get_node("OptionsMenu")
+	optionsMenu.set_visible(false)
+
+
+func _on_exit_help_pressed() -> void:
+	var helpPanel = get_node("HelpPanel")
+	helpPanel.set_visible(false)
