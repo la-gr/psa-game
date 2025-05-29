@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=16 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -9,8 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://jynsia3s4mmn" path="res://images_game/IMG_0360.jpeg" id="5_100w2"]
 [ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
 [ext_resource type="Texture2D" uid="uid://dhoebvyj8bpce" path="res://images_game/floer.jpg" id="6_if5l4"]
-[ext_resource type="Texture2D" uid="uid://8xsnp4tj6rih" path="res://images_game/BUY.png" id="7_2f3bc"]
 [ext_resource type="Texture2D" uid="uid://bqyinxq28agsy" path="res://images_game/Screenshot 2025-05-28 140650.png" id="7_if5l4"]
+[ext_resource type="FontFile" uid="uid://dijudjs2awvrb" path="res://Space_Mono/SpaceMono-Bold.ttf" id="7_mgp33"]
+[ext_resource type="Texture2D" uid="uid://dc3o0hcfakak6" path="res://images_game/butReal.png" id="8_mgp33"]
 [ext_resource type="Texture2D" uid="uid://bukn6uyw7f1je" path="res://images_game/point2.png" id="10_100w2"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hut4a"]
@@ -53,17 +54,17 @@ scale = Vector2(0.600741, 0.600741)
 texture = ExtResource("2_blukf")
 
 [node name="scroll" type="ScrollContainer" parent="."]
-offset_left = 286.0
+offset_left = 283.0
 offset_top = 32.0
 offset_right = 904.0
-offset_bottom = 519.0
+offset_bottom = 515.0
 vertical_scroll_mode = 2
 script = ExtResource("3_100w2")
 
 [node name="FlowContainer" type="FlowContainer" parent="scroll"]
-custom_minimum_size = Vector2(300, 1500)
+custom_minimum_size = Vector2(300, 900)
 layout_mode = 2
-theme_override_constants/h_separation = 30
+theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 
 [node name="TextureRect4" type="TextureRect" parent="scroll/FlowContainer"]
@@ -81,7 +82,7 @@ texture = ExtResource("4_hut4a")
 expand_mode = 1
 
 [node name="dawg" type="TextureRect" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(230, 200)
+custom_minimum_size = Vector2(240, 200)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -90,39 +91,62 @@ expand_mode = 1
 
 [node name="cybtext" type="RichTextLabel" parent="scroll/FlowContainer"]
 clip_contents = false
-custom_minimum_size = Vector2(100, 20)
+custom_minimum_size = Vector2(130, 20)
 layout_direction = 2
 layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
 text = "CyberTruck"
 scroll_active = false
 
 [node name="Button" type="Button" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(100, 60)
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
-icon = ExtResource("7_2f3bc")
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
 flat = true
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="dawg2" type="RichTextLabel" parent="scroll/FlowContainer"]
-modulate = Color(0, 0, 0, 1)
-custom_minimum_size = Vector2(100, 50)
+[node name="dawgtext" type="RichTextLabel" parent="scroll/FlowContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(140, 20)
+layout_direction = 2
 layout_mode = 2
-text = "dawg"
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Dawg"
 scroll_active = false
 
 [node name="Button2" type="Button" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(100, 60)
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 0
-icon = ExtResource("7_2f3bc")
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
 flat = true
 vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="ad1" type="TextureRect" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(100, 100)
+custom_minimum_size = Vector2(140, 100)
 layout_mode = 2
 texture = ExtResource("7_if5l4")
 expand_mode = 1
@@ -133,6 +157,46 @@ layout_direction = 2
 layout_mode = 2
 texture = ExtResource("6_if5l4")
 expand_mode = 1
+
+[node name="empty" type="RichTextLabel" parent="scroll/FlowContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(140, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+scroll_active = false
+
+[node name="flowetext2" type="RichTextLabel" parent="scroll/FlowContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(200, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Flower"
+scroll_active = false
+
+[node name="Button3" type="Button" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
 
 [node name="hand1" type="AnimatedSprite2D" parent="."]
 position = Vector2(843, 421)

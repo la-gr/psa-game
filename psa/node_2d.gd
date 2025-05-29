@@ -17,7 +17,7 @@ func _input(event):
 	if event is InputEventMouseButton:
 		var b = event.position.x
 		if (880 < b) && (b < 920):
-			hand1.set_frame(2)
+			hand1.set_frame(1)
 			#make it follow later
 		else:
 			hand1.set_frame(1)
@@ -29,3 +29,7 @@ func _input(event):
 		tween.kill() # Abort the previous animation.
 		tween = create_tween()
 		tween.tween_property(hand1, "position", Vector2(843.0, 421.0), 0.2)
+
+
+func _on_button_pressed() -> void:
+	pass # Replace with function body.
