@@ -1,19 +1,15 @@
-[gd_scene load_steps=14 format=3 uid="uid://bv1074abebevd"]
+[gd_scene load_steps=13 format=3 uid="uid://b4yu7y18rbfh3"]
 
-[ext_resource type="Script" uid="uid://bv2fxxhc6vu6n" path="res://mainscreen.gd" id="1_kvqn4"]
+[ext_resource type="Script" path="res://mainscreen.gd" id="1_kvqn4"]
 [ext_resource type="Texture2D" uid="uid://c8l1tjk2x1xl" path="res://icons/temp title.png" id="2_8fn4r"]
+[ext_resource type="Texture2D" uid="uid://c4xlyp8r8ysri" path="res://icons/mainscreen bg.png" id="2_vlbu8"]
 [ext_resource type="Texture2D" uid="uid://dcxno6sw1im6q" path="res://icons/temp play.png" id="3_huavm"]
 [ext_resource type="Texture2D" uid="uid://bskcnk8ivexnl" path="res://icons/temp options.png" id="4_luk67"]
-[ext_resource type="Script" uid="uid://c1txns0f6so4d" path="res://volume_slider.gd" id="5_6of4a"]
+[ext_resource type="Script" path="res://volume_slider.gd" id="5_6of4a"]
 [ext_resource type="Texture2D" uid="uid://cdo0bgg22oh22" path="res://icons/temp help.png" id="5_etpox"]
 [ext_resource type="Texture2D" uid="uid://lvqp3uacw1g1" path="res://icons/temp exit.png" id="6_hn4n6"]
 [ext_resource type="Texture2D" uid="uid://k25rprw6uxyw" path="res://icons/ad1.png" id="7_4ydbd"]
 [ext_resource type="Texture2D" uid="uid://csg2552nyv356" path="res://icons/ad2.png" id="8_vue7p"]
-
-[sub_resource type="Gradient" id="Gradient_x1tlb"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qirm2"]
-gradient = SubResource("Gradient_x1tlb")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvqn4"]
 bg_color = Color(0.86237, 0.475918, 0.256368, 1)
@@ -37,9 +33,9 @@ script = ExtResource("1_kvqn4")
 
 [node name="Background" type="Sprite2D" parent="."]
 z_index = -1
-position = Vector2(587.5, 346)
-scale = Vector2(4.77734, 740)
-texture = SubResource("GradientTexture1D_qirm2")
+position = Vector2(572, 323)
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("2_vlbu8")
 
 [node name="Title" type="Sprite2D" parent="."]
 position = Vector2(568, 82)
@@ -163,6 +159,7 @@ icon_alignment = 1
 expand_icon = true
 
 [node name="HelpPanel" type="Panel" parent="."]
+visible = false
 z_index = 5
 offset_left = 236.0
 offset_top = 192.0

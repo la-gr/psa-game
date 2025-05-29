@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c8yw24u4f205i"
-valid=false
+uid="uid://beaftp4xjsoid"
+path="res://.godot/imported/mainscreen bg.png-e88d50de6efb4e44b0845dcebb84861d.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://icon.svg"
+source_file="res://mainscreen bg.png"
+dest_files=["res://.godot/imported/mainscreen bg.png-e88d50de6efb4e44b0845dcebb84861d.ctex"]
 
 [params]
 
@@ -28,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
