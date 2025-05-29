@@ -11,6 +11,12 @@ config_version=5
 [application]
 
 <<<<<<< HEAD
+config/name="psa please work"
+config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://icon.svg"
+
+=======
+<<<<<<< HEAD
 config/name="psa"
 config/features=PackedStringArray("4.4", "Mobile")
 config/icon="res://icon.svg"
@@ -36,6 +42,7 @@ window/size/mode=2
 window/stretch/mode="canvas_items"
 
 >>>>>>> e151b1cabeb476ebfa5db05d10921740aab694ba
+>>>>>>> ffb4752584c2ad7155c42487b2f8bacb5b623e3b
 [editor]
 
 version_control/plugin_name="GitPlugin"
