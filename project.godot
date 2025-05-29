@@ -11,10 +11,28 @@ config_version=5
 [application]
 
 config/name="psa"
+<<<<<<< HEAD
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
+=======
+run/main_scene="uid://dha2chfbnh26k"
+config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+
+>>>>>>> bf66a6640ef17bd7beceac24e9362e26cf1babb3
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+<<<<<<< HEAD
+=======
+
+[rendering]
+
+renderer/rendering_method="mobile"
+>>>>>>> bf66a6640ef17bd7beceac24e9362e26cf1babb3

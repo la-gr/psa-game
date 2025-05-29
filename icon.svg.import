@@ -2,16 +2,35 @@
 
 importer="texture"
 type="CompressedTexture2D"
+<<<<<<< HEAD
 uid="uid://bo7e2oyer1e7c"
+=======
+<<<<<<< HEAD
+uid="uid://m5v4ttfk7qik"
+>>>>>>> bf66a6640ef17bd7beceac24e9362e26cf1babb3
 path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
 metadata={
 "vram_texture": false
 }
+<<<<<<< HEAD
+=======
+=======
+uid="uid://dumnrmi85vocg"
+valid=false
+>>>>>>> fff1480f304bac2af3f7053944a0d759f2191ac8
+>>>>>>> bf66a6640ef17bd7beceac24e9362e26cf1babb3
 
 [deps]
 
 source_file="res://icon.svg"
+<<<<<<< HEAD
 dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+=======
+<<<<<<< HEAD
+dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+=======
+>>>>>>> fff1480f304bac2af3f7053944a0d759f2191ac8
+>>>>>>> bf66a6640ef17bd7beceac24e9362e26cf1babb3
 
 [params]
 
