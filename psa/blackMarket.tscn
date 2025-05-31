@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=19 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -7,12 +7,28 @@
 [ext_resource type="Texture2D" uid="uid://bbyn75rw8pof" path="res://images_game/hand2.png" id="4_4rg1m"]
 [ext_resource type="Texture2D" uid="uid://dj77txdnq5ynh" path="res://images_game/cybertruck.png" id="4_hut4a"]
 [ext_resource type="Texture2D" uid="uid://jynsia3s4mmn" path="res://images_game/IMG_0360.jpeg" id="5_100w2"]
+[ext_resource type="Texture2D" uid="uid://rgas8reayrxu" path="res://images_game/cybTruck.png" id="5_mf1cj"]
 [ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
 [ext_resource type="Texture2D" uid="uid://dhoebvyj8bpce" path="res://images_game/floer.jpg" id="6_if5l4"]
 [ext_resource type="Texture2D" uid="uid://bqyinxq28agsy" path="res://images_game/Screenshot 2025-05-28 140650.png" id="7_if5l4"]
 [ext_resource type="FontFile" uid="uid://dijudjs2awvrb" path="res://Space_Mono/SpaceMono-Bold.ttf" id="7_mgp33"]
 [ext_resource type="Texture2D" uid="uid://dc3o0hcfakak6" path="res://images_game/butReal.png" id="8_mgp33"]
 [ext_resource type="Texture2D" uid="uid://bukn6uyw7f1je" path="res://images_game/point2.png" id="10_100w2"]
+[ext_resource type="Texture2D" uid="uid://dg7um8av1orgp" path="res://images_game/Dog.png" id="11_kedqf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mf1cj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hut4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_kedqf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hut4a"]
 animations = [{
@@ -73,23 +89,20 @@ layout_mode = 2
 texture = ExtResource("5_wvdav")
 expand_mode = 1
 
-[node name="cybertruck" type="TextureRect" parent="scroll/FlowContainer"]
+[node name="Cyber" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="cybertruck" type="TextureRect" parent="scroll/FlowContainer/Cyber"]
 custom_minimum_size = Vector2(230, 200)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("4_hut4a")
+texture = ExtResource("5_mf1cj")
 expand_mode = 1
 
-[node name="dawg" type="TextureRect" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(240, 200)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
-texture = ExtResource("5_100w2")
-expand_mode = 1
-
-[node name="cybtext" type="RichTextLabel" parent="scroll/FlowContainer"]
+[node name="cybtext" type="RichTextLabel" parent="scroll/FlowContainer/Cyber"]
 clip_contents = false
 custom_minimum_size = Vector2(130, 20)
 layout_direction = 2
@@ -102,7 +115,7 @@ theme_override_font_sizes/normal_font_size = 21
 text = "CyberTruck"
 scroll_active = false
 
-[node name="Button" type="Button" parent="scroll/FlowContainer"]
+[node name="Button" type="Button" parent="scroll/FlowContainer/Cyber"]
 custom_minimum_size = Vector2(80, 37)
 layout_direction = 2
 layout_mode = 2
@@ -117,7 +130,20 @@ flat = true
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="dawgtext" type="RichTextLabel" parent="scroll/FlowContainer"]
+[node name="dog" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="dawg" type="TextureRect" parent="scroll/FlowContainer/dog"]
+custom_minimum_size = Vector2(240, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("5_100w2")
+expand_mode = 1
+
+[node name="dawgtext" type="RichTextLabel" parent="scroll/FlowContainer/dog"]
 clip_contents = false
 custom_minimum_size = Vector2(140, 20)
 layout_direction = 2
@@ -130,7 +156,7 @@ theme_override_font_sizes/normal_font_size = 21
 text = "Dawg"
 scroll_active = false
 
-[node name="Button2" type="Button" parent="scroll/FlowContainer"]
+[node name="Button2" type="Button" parent="scroll/FlowContainer/dog"]
 custom_minimum_size = Vector2(80, 37)
 layout_direction = 2
 layout_mode = 2
@@ -198,6 +224,21 @@ flat = true
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="popup" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(576, 307)
+scale = Vector2(0.746106, 0.831492)
+sprite_frames = SubResource("SpriteFrames_mf1cj")
+
+[node name="popBut" type="Button" parent="popup"]
+modulate = Color(1, 1, 0, 1)
+self_modulate = Color(1, 0.890196, 0.0705882, 1)
+offset_left = -194.342
+offset_top = 82.9834
+offset_right = -9.34238
+offset_bottom = 158.983
+icon = ExtResource("8_mgp33")
+
 [node name="hand1" type="AnimatedSprite2D" parent="."]
 position = Vector2(843, 421)
 scale = Vector2(0.76, 0.76)
@@ -212,3 +253,8 @@ sprite_frames = SubResource("SpriteFrames_100w2")
 centered = false
 offset = Vector2(-50, -30)
 flip_h = true
+
+[connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/dog/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="popup/popBut" to="." method="_on_pop_but_pressed"]

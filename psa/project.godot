@@ -18,6 +18,8 @@ config/icon="res://icon.svg"
 [display]
 
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://b0kpumg3p65qv"
+mouse_cursor/custom_image_hotspot=Vector2(10, 10)
 
 [editor]
 

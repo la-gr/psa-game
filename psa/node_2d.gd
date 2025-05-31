@@ -1,9 +1,13 @@
 extends Node2D
 #black market
 var tween
+var num = 1
+var items = ["Cyber", "dog"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
 	var hand2 = get_node("hand2")
+	var pop_up = get_node("popup")
+	pop_up.set_visible(false)
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,6 +34,28 @@ func _input(event):
 		tween = create_tween()
 		tween.tween_property(hand1, "position", Vector2(843.0, 421.0), 0.2)
 
+		
+func but_click(n) -> void:
+	num=n
+	var pop_up = get_node("popup")
+	await get_tree().create_timer(0.7).timeout #waits
+	pop_up.set_visible(true)
+	pop_up.set_frame(n)
+
 
 func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	but_click(0)
+
+func _on_button_2_pressed() -> void:
+	but_click(1)
+
+func _on_button_3_pressed() -> void:
+	but_click(0)
+
+func _on_pop_but_pressed() -> void:
+	#var p = items[num]
+	var group = get_node("scroll/FlowContainer/"+items[num])
+	var pop_up = get_node("popup")
+	await get_tree().create_timer(0.7).timeout
+	group.set_visible(false)
+	pop_up.set_visible(false)
