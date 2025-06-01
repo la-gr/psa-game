@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=22 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -6,15 +6,18 @@
 [ext_resource type="Script" uid="uid://cuwsva3g86idn" path="res://Screen.gd" id="3_100w2"]
 [ext_resource type="Texture2D" uid="uid://bbyn75rw8pof" path="res://images_game/hand2.png" id="4_4rg1m"]
 [ext_resource type="Texture2D" uid="uid://dj77txdnq5ynh" path="res://images_game/cybertruck.png" id="4_hut4a"]
-[ext_resource type="Texture2D" uid="uid://jynsia3s4mmn" path="res://images_game/IMG_0360.jpeg" id="5_100w2"]
-[ext_resource type="Texture2D" uid="uid://rgas8reayrxu" path="res://images_game/cybTruck.png" id="5_mf1cj"]
+[ext_resource type="Texture2D" uid="uid://d1wkgpundc2eb" path="res://images_game/items/IMG_7424.jpg" id="5_cc6fy"]
 [ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
-[ext_resource type="Texture2D" uid="uid://dhoebvyj8bpce" path="res://images_game/floer.jpg" id="6_if5l4"]
 [ext_resource type="Texture2D" uid="uid://bqyinxq28agsy" path="res://images_game/Screenshot 2025-05-28 140650.png" id="7_if5l4"]
 [ext_resource type="FontFile" uid="uid://dijudjs2awvrb" path="res://Space_Mono/SpaceMono-Bold.ttf" id="7_mgp33"]
 [ext_resource type="Texture2D" uid="uid://dc3o0hcfakak6" path="res://images_game/butReal.png" id="8_mgp33"]
+[ext_resource type="Texture2D" uid="uid://hl0g4swc5bjd" path="res://images_game/items/IMG_7425.jpg" id="8_sl02u"]
 [ext_resource type="Texture2D" uid="uid://bukn6uyw7f1je" path="res://images_game/point2.png" id="10_100w2"]
+[ext_resource type="Texture2D" uid="uid://d3s4avlutbylb" path="res://images_game/items/IMG_7426.jpg" id="10_rq0lb"]
 [ext_resource type="Texture2D" uid="uid://dg7um8av1orgp" path="res://images_game/Dog.png" id="11_kedqf"]
+[ext_resource type="Texture2D" uid="uid://b2jyip2tya6cy" path="res://images_game/items/IMG_7427.jpg" id="11_lap5i"]
+[ext_resource type="Texture2D" uid="uid://b5vi2kqvrvk6h" path="res://images_game/items/IMG_7428.jpg" id="12_nqr8k"]
+[ext_resource type="Texture2D" uid="uid://dfla2r0eu1hix" path="res://images_game/items/IMG_7429.jpg" id="13_bumlo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mf1cj"]
 animations = [{
@@ -73,7 +76,7 @@ texture = ExtResource("2_blukf")
 offset_left = 283.0
 offset_top = 32.0
 offset_right = 904.0
-offset_bottom = 515.0
+offset_bottom = 517.0
 vertical_scroll_mode = 2
 script = ExtResource("3_100w2")
 
@@ -84,8 +87,10 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 
 [node name="TextureRect4" type="TextureRect" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(600, 100)
+custom_minimum_size = Vector2(550, 100)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 texture = ExtResource("5_wvdav")
 expand_mode = 1
 
@@ -99,7 +104,7 @@ custom_minimum_size = Vector2(230, 200)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-texture = ExtResource("5_mf1cj")
+texture = ExtResource("5_cc6fy")
 expand_mode = 1
 
 [node name="cybtext" type="RichTextLabel" parent="scroll/FlowContainer/Cyber"]
@@ -140,7 +145,7 @@ custom_minimum_size = Vector2(240, 200)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
-texture = ExtResource("5_100w2")
+texture = ExtResource("8_sl02u")
 expand_mode = 1
 
 [node name="dawgtext" type="RichTextLabel" parent="scroll/FlowContainer/dog"]
@@ -172,31 +177,23 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="ad1" type="TextureRect" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(140, 100)
+custom_minimum_size = Vector2(140, 300)
 layout_mode = 2
 texture = ExtResource("7_if5l4")
 expand_mode = 1
 
-[node name="flower" type="TextureRect" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(300, 300)
+[node name="flour" type="FlowContainer" parent="scroll/FlowContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 19
+
+[node name="flower" type="TextureRect" parent="scroll/FlowContainer/flour"]
+custom_minimum_size = Vector2(300, 230)
 layout_direction = 2
 layout_mode = 2
-texture = ExtResource("6_if5l4")
+texture = ExtResource("10_rq0lb")
 expand_mode = 1
 
-[node name="empty" type="RichTextLabel" parent="scroll/FlowContainer"]
-clip_contents = false
-custom_minimum_size = Vector2(140, 20)
-layout_direction = 2
-layout_mode = 2
-theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 4
-theme_override_fonts/normal_font = ExtResource("7_mgp33")
-theme_override_font_sizes/normal_font_size = 21
-scroll_active = false
-
-[node name="flowetext2" type="RichTextLabel" parent="scroll/FlowContainer"]
+[node name="flowetext2" type="RichTextLabel" parent="scroll/FlowContainer/flour"]
 clip_contents = false
 custom_minimum_size = Vector2(200, 20)
 layout_direction = 2
@@ -209,7 +206,130 @@ theme_override_font_sizes/normal_font_size = 21
 text = "Flower"
 scroll_active = false
 
-[node name="Button3" type="Button" parent="scroll/FlowContainer"]
+[node name="Button3" type="Button" parent="scroll/FlowContainer/flour"]
+custom_minimum_size = Vector2(80.19, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Cat" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="cat" type="TextureRect" parent="scroll/FlowContainer/Cat"]
+custom_minimum_size = Vector2(240, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("11_lap5i")
+expand_mode = 1
+
+[node name="cattext" type="RichTextLabel" parent="scroll/FlowContainer/Cat"]
+clip_contents = false
+custom_minimum_size = Vector2(140, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Cat"
+scroll_active = false
+
+[node name="Button4" type="Button" parent="scroll/FlowContainer/Cat"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="House" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 40
+
+[node name="hous" type="TextureRect" parent="scroll/FlowContainer/House"]
+custom_minimum_size = Vector2(260, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("12_nqr8k")
+expand_mode = 1
+
+[node name="houstext" type="RichTextLabel" parent="scroll/FlowContainer/House"]
+clip_contents = false
+custom_minimum_size = Vector2(140, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "House"
+scroll_active = false
+
+[node name="Button5" type="Button" parent="scroll/FlowContainer/House"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Couhc" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 130
+
+[node name="couch" type="TextureRect" parent="scroll/FlowContainer/Couhc"]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("13_bumlo")
+expand_mode = 1
+
+[node name="couchtext" type="RichTextLabel" parent="scroll/FlowContainer/Couhc"]
+clip_contents = false
+custom_minimum_size = Vector2(140, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Couch"
+scroll_active = false
+
+[node name="Button6" type="Button" parent="scroll/FlowContainer/Couhc"]
 custom_minimum_size = Vector2(80, 37)
 layout_direction = 2
 layout_mode = 2
@@ -256,5 +376,5 @@ flip_h = true
 
 [connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="scroll/FlowContainer/dog/Button2" to="." method="_on_button_2_pressed"]
-[connection signal="pressed" from="scroll/FlowContainer/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/flour/Button3" to="." method="_on_button_3_pressed"]
 [connection signal="pressed" from="popup/popBut" to="." method="_on_pop_but_pressed"]
