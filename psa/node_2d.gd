@@ -2,6 +2,7 @@ extends Node2D
 #black market
 var tween
 var num = 1
+var hand1
 var items = ["Cyber", "dog"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
@@ -16,23 +17,22 @@ func _process(_delta) -> void:
 	
 	
 func _input(event):
-	var hand1 = get_node("hand1");
+	hand1 = get_node("hand1");
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton:
 		var b = event.position.x
-		if (880 < b) && (b < 920):
-			hand1.set_frame(1)
-			#make it follow later
-		else:
-			hand1.set_frame(1)
+		hand1.set_frame(1)
 		tween = create_tween()
 		tween.tween_property(hand1, "position", event.position, 0.2)
 		await get_tree().create_timer(0.5).timeout #waits
 		hand1.set_frame(0)
 		await get_tree().create_timer(0.2).timeout #waits
-		tween.kill() # Abort the previous animation.
-		tween = create_tween()
-		tween.tween_property(hand1, "position", Vector2(843.0, 421.0), 0.2)
+		var l = Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)
+		#print(l)
+		if (!l):
+			tween.kill() # Abort the previous animation.
+			tween = create_tween()
+			tween.tween_property(hand1, "position", Vector2(843.0, 421.0), 0.2)
 
 		
 func but_click(n) -> void:

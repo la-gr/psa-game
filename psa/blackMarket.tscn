@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=33 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -8,16 +8,56 @@
 [ext_resource type="Texture2D" uid="uid://dj77txdnq5ynh" path="res://images_game/cybertruck.png" id="4_hut4a"]
 [ext_resource type="Texture2D" uid="uid://d1wkgpundc2eb" path="res://images_game/items/IMG_7424.jpg" id="5_cc6fy"]
 [ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
-[ext_resource type="Texture2D" uid="uid://bqyinxq28agsy" path="res://images_game/Screenshot 2025-05-28 140650.png" id="7_if5l4"]
 [ext_resource type="FontFile" uid="uid://dijudjs2awvrb" path="res://Space_Mono/SpaceMono-Bold.ttf" id="7_mgp33"]
 [ext_resource type="Texture2D" uid="uid://dc3o0hcfakak6" path="res://images_game/butReal.png" id="8_mgp33"]
 [ext_resource type="Texture2D" uid="uid://hl0g4swc5bjd" path="res://images_game/items/IMG_7425.jpg" id="8_sl02u"]
-[ext_resource type="Texture2D" uid="uid://bukn6uyw7f1je" path="res://images_game/point2.png" id="10_100w2"]
+[ext_resource type="Texture2D" uid="uid://btclrqvcfi3wg" path="res://images_game/ads/Untitled_Artwork (8).png" id="9_sl02u"]
+[ext_resource type="Texture2D" uid="uid://rt6k3n70wnd7" path="res://images_game/ads/Untitled_Artwork (9).png" id="10_lap5i"]
 [ext_resource type="Texture2D" uid="uid://d3s4avlutbylb" path="res://images_game/items/IMG_7426.jpg" id="10_rq0lb"]
 [ext_resource type="Texture2D" uid="uid://dg7um8av1orgp" path="res://images_game/Dog.png" id="11_kedqf"]
 [ext_resource type="Texture2D" uid="uid://b2jyip2tya6cy" path="res://images_game/items/IMG_7427.jpg" id="11_lap5i"]
 [ext_resource type="Texture2D" uid="uid://b5vi2kqvrvk6h" path="res://images_game/items/IMG_7428.jpg" id="12_nqr8k"]
 [ext_resource type="Texture2D" uid="uid://dfla2r0eu1hix" path="res://images_game/items/IMG_7429.jpg" id="13_bumlo"]
+[ext_resource type="Texture2D" uid="uid://8nit3d4e4be8" path="res://images_game/ads/IMG_7440.jpg" id="15_v5as7"]
+[ext_resource type="Texture2D" uid="uid://jc102j1ptark" path="res://images_game/ads/IMG_7441.jpg" id="16_iwcwj"]
+[ext_resource type="Texture2D" uid="uid://belan40f2y0rg" path="res://images_game/ads/IMG_7442.jpg" id="17_0id04"]
+[ext_resource type="Texture2D" uid="uid://4vbm65x61ray" path="res://images_game/items/IMG_7430.jpg" id="18_r44hu"]
+[ext_resource type="Texture2D" uid="uid://d2s0lqg6hludc" path="res://images_game/items/IMG_7443.jpg" id="19_u4p8y"]
+[ext_resource type="Texture2D" uid="uid://42p1efsrlovk" path="res://images_game/items/IMG_7434.jpg" id="20_bh6ps"]
+[ext_resource type="Texture2D" uid="uid://cnac6qaave57g" path="res://images_game/items/IMG_7433.jpg" id="21_3daxb"]
+[ext_resource type="Texture2D" uid="uid://0c1aqhgdaspc" path="res://images_game/yogourt.jpg" id="22_1s2og"]
+[ext_resource type="Texture2D" uid="uid://utp2b5c0evbv" path="res://images_game/items/IMG_7432.jpg" id="23_garvh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_sl02u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lap5i")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eyvje"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_v5as7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_iwcwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_0id04")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mf1cj"]
 animations = [{
@@ -41,9 +81,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("4_4rg1m")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_100w2")
 }],
 "loop": true,
 "name": &"default",
@@ -73,15 +110,15 @@ scale = Vector2(0.600741, 0.600741)
 texture = ExtResource("2_blukf")
 
 [node name="scroll" type="ScrollContainer" parent="."]
-offset_left = 283.0
+offset_left = 273.0
 offset_top = 32.0
 offset_right = 904.0
-offset_bottom = 517.0
+offset_bottom = 518.0
 vertical_scroll_mode = 2
 script = ExtResource("3_100w2")
 
 [node name="FlowContainer" type="FlowContainer" parent="scroll"]
-custom_minimum_size = Vector2(300, 900)
+custom_minimum_size = Vector2(630, 900)
 layout_mode = 2
 theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
@@ -141,7 +178,7 @@ layout_mode = 2
 theme_override_constants/h_separation = 20
 
 [node name="dawg" type="TextureRect" parent="scroll/FlowContainer/dog"]
-custom_minimum_size = Vector2(240, 200)
+custom_minimum_size = Vector2(320, 200)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -176,18 +213,22 @@ flat = true
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="ad1" type="TextureRect" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(140, 300)
+[node name="add1" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(200, 300)
 layout_mode = 2
-texture = ExtResource("7_if5l4")
-expand_mode = 1
+
+[node name="ad1" type="AnimatedSprite2D" parent="scroll/FlowContainer/add1"]
+position = Vector2(100, 147)
+scale = Vector2(0.375691, 0.351145)
+sprite_frames = SubResource("SpriteFrames_nqr8k")
+frame_progress = 0.736581
 
 [node name="flour" type="FlowContainer" parent="scroll/FlowContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 19
 
 [node name="flower" type="TextureRect" parent="scroll/FlowContainer/flour"]
-custom_minimum_size = Vector2(300, 230)
+custom_minimum_size = Vector2(350, 230)
 layout_direction = 2
 layout_mode = 2
 texture = ExtResource("10_rq0lb")
@@ -227,7 +268,7 @@ layout_mode = 2
 theme_override_constants/h_separation = 20
 
 [node name="cat" type="TextureRect" parent="scroll/FlowContainer/Cat"]
-custom_minimum_size = Vector2(240, 200)
+custom_minimum_size = Vector2(300, 200)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
@@ -303,12 +344,12 @@ flat = true
 vertical_icon_alignment = 0
 expand_icon = true
 
-[node name="Couhc" type="FlowContainer" parent="scroll/FlowContainer"]
+[node name="Couch" type="FlowContainer" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_constants/h_separation = 130
 
-[node name="couch" type="TextureRect" parent="scroll/FlowContainer/Couhc"]
+[node name="couc" type="TextureRect" parent="scroll/FlowContainer/Couch"]
 custom_minimum_size = Vector2(350, 200)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -316,7 +357,7 @@ size_flags_vertical = 0
 texture = ExtResource("13_bumlo")
 expand_mode = 1
 
-[node name="couchtext" type="RichTextLabel" parent="scroll/FlowContainer/Couhc"]
+[node name="couchtext" type="RichTextLabel" parent="scroll/FlowContainer/Couch"]
 clip_contents = false
 custom_minimum_size = Vector2(140, 20)
 layout_direction = 2
@@ -329,7 +370,234 @@ theme_override_font_sizes/normal_font_size = 21
 text = "Couch"
 scroll_active = false
 
-[node name="Button6" type="Button" parent="scroll/FlowContainer/Couhc"]
+[node name="Button6" type="Button" parent="scroll/FlowContainer/Couch"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="add2" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+
+[node name="ad2" type="AnimatedSprite2D" parent="scroll/FlowContainer/add2"]
+position = Vector2(118.375, 112)
+scale = Vector2(0.338574, 0.401338)
+sprite_frames = SubResource("SpriteFrames_eyvje")
+
+[node name="Tree" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="tre" type="TextureRect" parent="scroll/FlowContainer/Tree"]
+custom_minimum_size = Vector2(240, 230)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("18_r44hu")
+expand_mode = 1
+
+[node name="treetext" type="RichTextLabel" parent="scroll/FlowContainer/Tree"]
+clip_contents = false
+custom_minimum_size = Vector2(140, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Tree"
+scroll_active = false
+
+[node name="Button7" type="Button" parent="scroll/FlowContainer/Tree"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="foot" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 200)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="foo" type="TextureRect" parent="scroll/FlowContainer/foot"]
+custom_minimum_size = Vector2(280, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("19_u4p8y")
+expand_mode = 1
+
+[node name="footext" type="RichTextLabel" parent="scroll/FlowContainer/foot"]
+clip_contents = false
+custom_minimum_size = Vector2(140, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Foot"
+scroll_active = false
+
+[node name="Button8" type="Button" parent="scroll/FlowContainer/foot"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="worm" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 50
+
+[node name="wor" type="TextureRect" parent="scroll/FlowContainer/worm"]
+custom_minimum_size = Vector2(270, 180)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("20_bh6ps")
+expand_mode = 1
+
+[node name="wormtext" type="RichTextLabel" parent="scroll/FlowContainer/worm"]
+clip_contents = false
+custom_minimum_size = Vector2(140, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "worm"
+scroll_active = false
+
+[node name="Button9" type="Button" parent="scroll/FlowContainer/worm"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="shoe" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="sho" type="TextureRect" parent="scroll/FlowContainer/shoe"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("21_3daxb")
+expand_mode = 1
+
+[node name="shoetext" type="RichTextLabel" parent="scroll/FlowContainer/shoe"]
+clip_contents = false
+custom_minimum_size = Vector2(140, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Shoe"
+scroll_active = false
+
+[node name="Button10" type="Button" parent="scroll/FlowContainer/shoe"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="add3" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="ad3" type="TextureRect" parent="scroll/FlowContainer/add3"]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("22_1s2og")
+expand_mode = 1
+
+[node name="worm2" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 0
+
+[node name="wor2" type="TextureRect" parent="scroll/FlowContainer/worm2"]
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("23_garvh")
+expand_mode = 1
+
+[node name="worm2text" type="RichTextLabel" parent="scroll/FlowContainer/worm2"]
+clip_contents = false
+custom_minimum_size = Vector2(70, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "worm"
+scroll_active = false
+
+[node name="Button11" type="Button" parent="scroll/FlowContainer/worm2"]
 custom_minimum_size = Vector2(80, 37)
 layout_direction = 2
 layout_mode = 2
@@ -360,18 +628,18 @@ offset_bottom = 158.983
 icon = ExtResource("8_mgp33")
 
 [node name="hand1" type="AnimatedSprite2D" parent="."]
-position = Vector2(843, 421)
+position = Vector2(811, 504)
 scale = Vector2(0.76, 0.76)
 sprite_frames = SubResource("SpriteFrames_hut4a")
 centered = false
 offset = Vector2(-60, -100)
 
 [node name="hand2" type="AnimatedSprite2D" parent="."]
-position = Vector2(-391, 391)
+position = Vector2(308, 391)
 scale = Vector2(0.775, 0.775)
 sprite_frames = SubResource("SpriteFrames_100w2")
 centered = false
-offset = Vector2(-50, -30)
+offset = Vector2(-950, -50)
 flip_h = true
 
 [connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
