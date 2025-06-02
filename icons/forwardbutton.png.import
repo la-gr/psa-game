@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beaftp4xjsoid"
-path="res://.godot/imported/mainscreen bg.png-e88d50de6efb4e44b0845dcebb84861d.ctex"
+uid="uid://bxve0vdexw34p"
+path="res://.godot/imported/forwardbutton.png-5e6997c8c9e09081ce0acd1a97317e24.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://mainscreen bg.png"
-dest_files=["res://.godot/imported/mainscreen bg.png-e88d50de6efb4e44b0845dcebb84861d.ctex"]
+source_file="res://icons/forwardbutton.png"
+dest_files=["res://.godot/imported/forwardbutton.png-5e6997c8c9e09081ce0acd1a97317e24.ctex"]
 
 [params]
 
