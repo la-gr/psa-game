@@ -7,6 +7,10 @@ func _ready() -> void:
 	ad1.play()
 	var ad2 = get_node("FlowContainer/add2/ad2")
 	ad2.play()
+	var ad4 = get_node("FlowContainer/add4/ad4")
+	ad4.play()
+	var ad5 = get_node("FlowContainer/add5/ad5")
+	ad5.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

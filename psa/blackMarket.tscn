@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=47 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -27,6 +27,18 @@
 [ext_resource type="Texture2D" uid="uid://cnac6qaave57g" path="res://images_game/items/IMG_7433.jpg" id="21_3daxb"]
 [ext_resource type="Texture2D" uid="uid://0c1aqhgdaspc" path="res://images_game/yogourt.jpg" id="22_1s2og"]
 [ext_resource type="Texture2D" uid="uid://utp2b5c0evbv" path="res://images_game/items/IMG_7432.jpg" id="23_garvh"]
+[ext_resource type="Texture2D" uid="uid://dxrus0xinll" path="res://images_game/items/IMG_7435.jpg" id="24_7gcuv"]
+[ext_resource type="Texture2D" uid="uid://8kb2by53fpji" path="res://images_game/items/IMG_7437.jpg" id="25_v1w38"]
+[ext_resource type="Texture2D" uid="uid://cpu6a1pyhur20" path="res://images_game/items/IMG_7438.jpg" id="26_m33cv"]
+[ext_resource type="Texture2D" uid="uid://c2tcmbvvj0nov" path="res://images_game/items/shirtad1.png" id="27_hn13p"]
+[ext_resource type="Texture2D" uid="uid://bd7j7sqoaom4l" path="res://images_game/items/shirtad2.png" id="28_km5fk"]
+[ext_resource type="Texture2D" uid="uid://cif6uutrpci5t" path="res://images_game/items/shirtad3.png" id="29_80vge"]
+[ext_resource type="Texture2D" uid="uid://c20gpfv386bej" path="res://images_game/items/shirtad4.png" id="30_1msmy"]
+[ext_resource type="Texture2D" uid="uid://dppxqvac5r3wu" path="res://images_game/items/shoes1.png" id="31_0g5gs"]
+[ext_resource type="Texture2D" uid="uid://lhq4c4b0dnop" path="res://images_game/items/shoes2.png" id="32_ile1o"]
+[ext_resource type="Texture2D" uid="uid://bo7kf2x7mecih" path="res://images_game/items/shoes3.png" id="33_m372s"]
+[ext_resource type="Texture2D" uid="uid://du2igd140xrg0" path="res://images_game/items/img.jpg" id="34_o6ncx"]
+[ext_resource type="Texture2D" uid="uid://desoatk027pin" path="res://images_game/items/IMG_7439.jpg" id="35_ykl83"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
 animations = [{
@@ -57,6 +69,43 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_06x5d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_hn13p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_km5fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_80vge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_1msmy")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vbglq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_0g5gs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_ile1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_m372s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mf1cj"]
@@ -113,7 +162,7 @@ texture = ExtResource("2_blukf")
 offset_left = 273.0
 offset_top = 32.0
 offset_right = 904.0
-offset_bottom = 518.0
+offset_bottom = 519.0
 vertical_scroll_mode = 2
 script = ExtResource("3_100w2")
 
@@ -612,8 +661,238 @@ flat = true
 vertical_icon_alignment = 0
 expand_icon = true
 
+[node name="man" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+theme_override_constants/h_separation = 46
+
+[node name="ma" type="TextureRect" parent="scroll/FlowContainer/man"]
+custom_minimum_size = Vector2(200, 250)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("24_7gcuv")
+expand_mode = 1
+
+[node name="mantext" type="RichTextLabel" parent="scroll/FlowContainer/man"]
+clip_contents = false
+custom_minimum_size = Vector2(70, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Man"
+scroll_active = false
+
+[node name="Button12" type="Button" parent="scroll/FlowContainer/man"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Baby pic" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+theme_override_constants/h_separation = 46
+
+[node name="babypc" type="TextureRect" parent="scroll/FlowContainer/Baby pic"]
+custom_minimum_size = Vector2(340, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("25_v1w38")
+expand_mode = 1
+
+[node name="babtext" type="RichTextLabel" parent="scroll/FlowContainer/Baby pic"]
+clip_contents = false
+custom_minimum_size = Vector2(210, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Baby Picture"
+scroll_active = false
+
+[node name="Button13" type="Button" parent="scroll/FlowContainer/Baby pic"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="Phone" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
+theme_override_constants/h_separation = 46
+
+[node name="phon" type="TextureRect" parent="scroll/FlowContainer/Phone"]
+custom_minimum_size = Vector2(240, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("26_m33cv")
+expand_mode = 1
+
+[node name="phontext" type="RichTextLabel" parent="scroll/FlowContainer/Phone"]
+clip_contents = false
+custom_minimum_size = Vector2(110, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Phone"
+scroll_active = false
+
+[node name="Button14" type="Button" parent="scroll/FlowContainer/Phone"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="add4" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="ad4" type="AnimatedSprite2D" parent="scroll/FlowContainer/add4"]
+position = Vector2(31, 165)
+scale = Vector2(0.334507, 0.590994)
+sprite_frames = SubResource("SpriteFrames_06x5d")
+frame_progress = 0.106973
+
+[node name="add5" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(230, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 20
+
+[node name="ad5" type="AnimatedSprite2D" parent="scroll/FlowContainer/add5"]
+position = Vector2(142, 176)
+scale = Vector2(0.310638, 0.557408)
+sprite_frames = SubResource("SpriteFrames_vbglq")
+
+[node name="cheese" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(600, 250)
+layout_mode = 2
+theme_override_constants/h_separation = 46
+
+[node name="chhes" type="TextureRect" parent="scroll/FlowContainer/cheese"]
+custom_minimum_size = Vector2(240, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("34_o6ncx")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="FlowContainer" type="FlowContainer" parent="scroll/FlowContainer/cheese"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+
+[node name="chestext" type="RichTextLabel" parent="scroll/FlowContainer/cheese"]
+clip_contents = false
+custom_minimum_size = Vector2(110, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Cheese"
+scroll_active = false
+
+[node name="Button15" type="Button" parent="scroll/FlowContainer/cheese"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
+[node name="baby" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(300, 250)
+layout_mode = 2
+theme_override_constants/h_separation = 46
+
+[node name="baba" type="TextureRect" parent="scroll/FlowContainer/baby"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+texture = ExtResource("35_ykl83")
+expand_mode = 1
+
+[node name="babytext" type="RichTextLabel" parent="scroll/FlowContainer/baby"]
+clip_contents = false
+custom_minimum_size = Vector2(170, 20)
+layout_direction = 2
+layout_mode = 2
+theme_override_colors/default_color = Color(0.806938, 0.805728, 0.743511, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 21
+text = "Baby"
+scroll_active = false
+
+[node name="Button16" type="Button" parent="scroll/FlowContainer/baby"]
+custom_minimum_size = Vector2(80, 37)
+layout_direction = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_colors/icon_hover_pressed_color = Color(1, 0.968627, 0, 1)
+theme_override_colors/icon_hover_color = Color(1, 0.960784, 0, 1)
+theme_override_colors/icon_pressed_color = Color(1, 0.917647, 0, 1)
+icon = ExtResource("8_mgp33")
+flat = true
+vertical_icon_alignment = 0
+expand_icon = true
+
 [node name="popup" type="AnimatedSprite2D" parent="."]
-visible = false
 position = Vector2(576, 307)
 scale = Vector2(0.746106, 0.831492)
 sprite_frames = SubResource("SpriteFrames_mf1cj")
