@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=66 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -39,6 +39,24 @@
 [ext_resource type="Texture2D" uid="uid://bo7kf2x7mecih" path="res://images_game/items/shoes3.png" id="33_m372s"]
 [ext_resource type="Texture2D" uid="uid://du2igd140xrg0" path="res://images_game/items/img.jpg" id="34_o6ncx"]
 [ext_resource type="Texture2D" uid="uid://desoatk027pin" path="res://images_game/items/IMG_7439.jpg" id="35_ykl83"]
+[ext_resource type="Texture2D" uid="uid://xfa8f5jq8ccv" path="res://images_game/items/titles/flowerdesc.png" id="38_vbglq"]
+[ext_resource type="Texture2D" uid="uid://bdgc1o50q30e" path="res://images_game/items/titles/catdesc.png" id="39_cgqm2"]
+[ext_resource type="Texture2D" uid="uid://cpp5glsrrcy6w" path="res://images_game/items/titles/couchdesc.png" id="40_5b54k"]
+[ext_resource type="Texture2D" uid="uid://da30oowj3w0re" path="res://images_game/items/titles/housedesc.png" id="40_cgqm2"]
+[ext_resource type="Texture2D" uid="uid://2q3l3v57o1tc" path="res://images_game/items/titles/treedesc.png" id="41_12ywe"]
+[ext_resource type="Texture2D" uid="uid://cbho20136udyu" path="res://images_game/items/titles/footdesc.png" id="42_8mnkn"]
+[ext_resource type="Texture2D" uid="uid://d3d2t211gah18" path="res://images_game/items/titles/worm1.png" id="43_xxd4g"]
+[ext_resource type="Texture2D" uid="uid://c4eyeh5e8rycs" path="res://images_game/items/titles/shoedesc.png" id="44_u07l3"]
+[ext_resource type="Texture2D" uid="uid://cby6dwvwb84v7" path="res://images_game/items/titles/worm2.png" id="45_7e23c"]
+[ext_resource type="Texture2D" uid="uid://cnursfbjulmqj" path="res://images_game/items/titles/temp.png" id="46_0bn5j"]
+[ext_resource type="Texture2D" uid="uid://bid2sbydw8n55" path="res://images_game/items/titles/mandesc.png" id="47_1g2yp"]
+[ext_resource type="Texture2D" uid="uid://do43ylmgqopg" path="res://images_game/items/titles/phonedesc.png" id="48_co66k"]
+[ext_resource type="Texture2D" uid="uid://dpclm3rdo71ec" path="res://images_game/items/titles/chesdesc.png" id="49_1mvxv"]
+[ext_resource type="Texture2D" uid="uid://dnwgx0j4uws1r" path="res://images_game/items/titles/babydesc.png" id="50_v8ppe"]
+[ext_resource type="Texture2D" uid="uid://bill0osuamp4r" path="res://images_game/hearts-removebg-preview.png" id="54_xxd4g"]
+[ext_resource type="Texture2D" uid="uid://b5dobxhsl0ctc" path="res://images_game/hearts2-removebg-preview.png" id="55_u07l3"]
+[ext_resource type="Texture2D" uid="uid://eqs6mdfauwd8" path="res://images_game/hearts3-removebg-preview.png" id="56_7e23c"]
+[ext_resource type="Texture2D" uid="uid://b88w0sk7nbpyg" path="res://images_game/hearts4-removebg-preview.png" id="57_0bn5j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
 animations = [{
@@ -116,6 +134,48 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("11_kedqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_vbglq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_cgqm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_cgqm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_5b54k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_12ywe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_8mnkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_xxd4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_u07l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_7e23c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_1g2yp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_0bn5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_co66k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_1mvxv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_v8ppe")
 }],
 "loop": true,
 "name": &"default",
@@ -150,6 +210,26 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_1g2yp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_xxd4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_u07l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_7e23c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_0bn5j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="black market" type="Node2D"]
 script = ExtResource("1_tmppq")
 
@@ -162,7 +242,7 @@ texture = ExtResource("2_blukf")
 offset_left = 273.0
 offset_top = 32.0
 offset_right = 904.0
-offset_bottom = 519.0
+offset_bottom = 518.0
 vertical_scroll_mode = 2
 script = ExtResource("3_100w2")
 
@@ -173,12 +253,17 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 20
 
 [node name="TextureRect4" type="TextureRect" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(550, 100)
+custom_minimum_size = Vector2(410, 100)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 texture = ExtResource("5_wvdav")
 expand_mode = 1
+stretch_mode = 5
+
+[node name="FlowContainer" type="FlowContainer" parent="scroll/FlowContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 
 [node name="Cyber" type="FlowContainer" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(250, 0)
@@ -435,7 +520,7 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="add2" type="FlowContainer" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(150, 200)
+custom_minimum_size = Vector2(250, 200)
 layout_mode = 2
 
 [node name="ad2" type="AnimatedSprite2D" parent="scroll/FlowContainer/add2"]
@@ -785,7 +870,7 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="add4" type="FlowContainer" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(50, 0)
+custom_minimum_size = Vector2(120, 0)
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
@@ -796,12 +881,12 @@ sprite_frames = SubResource("SpriteFrames_06x5d")
 frame_progress = 0.106973
 
 [node name="add5" type="FlowContainer" parent="scroll/FlowContainer"]
-custom_minimum_size = Vector2(230, 0)
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
 [node name="ad5" type="AnimatedSprite2D" parent="scroll/FlowContainer/add5"]
-position = Vector2(142, 176)
+position = Vector2(70, 160)
 scale = Vector2(0.310638, 0.557408)
 sprite_frames = SubResource("SpriteFrames_vbglq")
 
@@ -893,6 +978,7 @@ vertical_icon_alignment = 0
 expand_icon = true
 
 [node name="popup" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(576, 307)
 scale = Vector2(0.746106, 0.831492)
 sprite_frames = SubResource("SpriteFrames_mf1cj")
@@ -921,7 +1007,25 @@ centered = false
 offset = Vector2(-950, -50)
 flip_h = true
 
+[node name="lives" type="AnimatedSprite2D" parent="."]
+position = Vector2(1031, 55)
+scale = Vector2(0.215021, 0.224708)
+sprite_frames = SubResource("SpriteFrames_1g2yp")
+
 [connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="scroll/FlowContainer/dog/Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="scroll/FlowContainer/flour/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/Cat/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/House/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/Couch/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/Tree/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/foot/Button8" to="." method="_on_button_8_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/worm/Button9" to="." method="_on_button_9_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/shoe/Button10" to="." method="_on_button_10_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/worm2/Button11" to="." method="_on_button_11_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/man/Button12" to="." method="_on_button_12_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/Baby pic/Button13" to="." method="_on_button_13_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/Phone/Button14" to="." method="_on_button_14_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/cheese/Button15" to="." method="_on_button_15_pressed"]
+[connection signal="pressed" from="scroll/FlowContainer/baby/Button16" to="." method="_on_button_16_pressed"]
 [connection signal="pressed" from="popup/popBut" to="." method="_on_pop_but_pressed"]
