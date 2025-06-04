@@ -241,19 +241,76 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 20
 
-[node name="VolumeSliderVBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+[node name="MasterVolume VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/VolumeSliderVBox"]
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_5b43f")
 theme_override_font_sizes/font_size = 30
-text = "Volume"
+text = "Master Volume"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="Volume Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/VolumeSliderVBox"]
+[node name="MasterVolume Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_6of4a")
+
+[node name="SoundEffects VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SoundEffects Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_6of4a")
+
+[node name="BackgroundMusic VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BackgroundMusic Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_6of4a")
+
+[node name="Voicelines VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="VoiceLines Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox"]
 layout_mode = 2
 size_flags_vertical = 2
 max_value = 1.0
@@ -351,7 +408,13 @@ frame_progress = 0.545454
 [connection signal="pressed" from="mainscreen/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Level Select/Level Select VBox/episode select/episode container/BlackMarket" to="." method="_on_black_market_pressed"]
 [connection signal="pressed" from="Level Select/Level Select VBox/back container/ExitLevels" to="." method="_on_exit_levels_pressed"]
-[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/VolumeSliderVBox/Volume Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/VolumeSliderVBox/Volume Slider" method="_on_mouse_exited"]
-[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/VolumeSliderVBox/Volume Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/VolumeSliderVBox/Volume Slider" method="_on_value_changed"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" method="_on_value_changed"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox/SoundEffects Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox/SoundEffects Slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox/SoundEffects Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox/SoundEffects Slider" method="_on_value_changed"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox/BackgroundMusic Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox/BackgroundMusic Slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox/BackgroundMusic Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox/BackgroundMusic Slider" method="_on_value_changed"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" method="_on_value_changed"]
 [connection signal="pressed" from="OptionsMenu/OptionsMenu VBox/back container/ExitOptions" to="." method="_on_exit_options_pressed"]
 [connection signal="pressed" from="HelpPanel/HelpVBox/back container/ExitHelp" to="." method="_on_exit_help_pressed"]
