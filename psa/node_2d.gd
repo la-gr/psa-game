@@ -3,12 +3,15 @@ extends Node2D
 var tween
 var num = 1
 var hand1
+var gn = false
 var items = ["Cyber", "dog", "flour", "Cat", "House", "Couch", 'Tree', "foot", "worm", "shoe", "worm2", "man", "Baby pic", "Phone", "cheese", "baby"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
 	var hand2 = get_node("hand2")
 	var pop_up = get_node("popup")
 	pop_up.set_visible(false)
+	var baby = get_node("kid gun")
+	baby.set_visible(false)
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -32,6 +35,22 @@ func _input(event):
 			tween.kill() # Abort the previous animation.
 			tween = create_tween()
 			tween.tween_property(hand1, "position", Vector2(843.0, 421.0), 0.2)
+	if event is InputEventKey and event.pressed: #user clicks the A key
+		if (event.keycode == KEY_A) and (gn == true):
+			var shot = get_node("gunshot")
+			shot.play()
+
+func gun() -> void:
+	var shot = get_node("gunshot")
+	shot.play()
+	await get_tree().create_timer(1.5).timeout #waits
+	var baby = get_node("kid gun")
+	baby.set_visible(true)
+	await get_tree().create_timer(5).timeout #waits
+	#have gun in left hand
+	#press A to shoot at bottom
+	gn = true
+	baby.set_visible(false)
 
 func life_lost() -> void:
 	var lives = get_node("lives")
@@ -42,6 +61,8 @@ func life_lost() -> void:
 		pass #end game
 		
 func but_click(n) -> void:
+	var clik = get_node("button click")
+	clik.play()
 	num=n
 	var pop_up = get_node("popup")
 	await get_tree().create_timer(0.7).timeout #waits
@@ -49,12 +70,14 @@ func but_click(n) -> void:
 	pop_up.set_frame(n)
 
 func _on_pop_but_pressed() -> void:
-	#var p = items[num]
+	var clik = get_node("button click")
+	clik.play()
 	var group = get_node("scroll/FlowContainer/"+items[num])
 	var pop_up = get_node("popup")
 	await get_tree().create_timer(0.7).timeout
 	group.set_visible(false)
 	pop_up.set_visible(false)
+	gun()
 
 func _on_button_pressed() -> void:
 	but_click(0)
