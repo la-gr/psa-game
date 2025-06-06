@@ -111,6 +111,38 @@ layout_mode = 2
 size_flags_vertical = 3
 icon = ExtResource("7_54ydl")
 flat = true
+offset_left = 696.0
+offset_top = 384.0
+offset_right = 1192.0
+offset_bottom = 592.0
+icon = ExtResource("3_huavm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Options" type="Button" parent="."]
+offset_left = 560.0
+offset_top = 640.0
+offset_right = 888.0
+offset_bottom = 784.0
+icon = ExtResource("4_luk67")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Help" type="Button" parent="."]
+offset_left = 912.0
+offset_top = 648.0
+offset_right = 1264.0
+offset_bottom = 768.0
+icon = ExtResource("5_etpox")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 856.0
+offset_top = 992.0
+offset_right = 992.0
+offset_bottom = 1048.0
+icon = ExtResource("6_hn4n6")
 icon_alignment = 1
 expand_icon = true
 

@@ -1,0 +1,31 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="psa"
+run/main_scene="uid://dha2chfbnh26k"
+config/features=PackedStringArray("4.4", "Mobile")
+config/icon="res://icon.svg"
+
+[display]
+
+window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://b0kpumg3p65qv"
+mouse_cursor/custom_image_hotspot=Vector2(10, 10)
+
+[editor]
+
+version_control/plugin_name="GitPlugin"
+version_control/autoload_on_startup=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
