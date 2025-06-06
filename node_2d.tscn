@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 [gd_scene load_steps=8 format=3 uid="uid://d3uwnkcbwp6mq"]
-=======
-[gd_scene format=3 uid="uid://6y3ccua8ien7"]
->>>>>>> 6170b874a19022db655e303008c6ea19fc953320
 
 [ext_resource type="Script" uid="uid://cftxudbymaiue" path="res://blackMar.gd" id="1_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://608uv7gpkc7j" path="res://images_game/hand1.png" id="2_kdubu"]
