@@ -1,0 +1,73 @@
+<<<<<<< HEAD
+[gd_scene load_steps=8 format=3 uid="uid://dha2chfbnh26k"]
+
+[ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
+[ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
+[ext_resource type="Texture2D" uid="uid://608uv7gpkc7j" path="res://images_game/hand1.png" id="2_wvdav"]
+[ext_resource type="Texture2D" uid="uid://bbyn75rw8pof" path="res://images_game/hand2.png" id="4_4rg1m"]
+[ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hut4a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wvdav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4rg1m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_100w2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wvdav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4rg1m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="black market" type="Node2D"]
+script = ExtResource("1_tmppq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(578.511, 322.6)
+scale = Vector2(0.600741, 0.600741)
+texture = ExtResource("2_blukf")
+
+[node name="hand1" type="AnimatedSprite2D" parent="."]
+position = Vector2(843, 421)
+scale = Vector2(0.76, 0.76)
+sprite_frames = SubResource("SpriteFrames_hut4a")
+centered = false
+offset = Vector2(-60, -100)
+
+[node name="hand2" type="AnimatedSprite2D" parent="."]
+position = Vector2(-391, 391)
+scale = Vector2(0.775, 0.775)
+sprite_frames = SubResource("SpriteFrames_100w2")
+centered = false
+offset = Vector2(-50, -30)
+flip_h = true
+
+[node name="title" type="Sprite2D" parent="."]
+position = Vector2(477, 85)
+rotation = -0.0174533
+scale = Vector2(0.612782, 0.612782)
+texture = ExtResource("5_wvdav")
+=======
+[gd_scene load_steps=2 format=3 uid="uid://dha2chfbnh26k"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_tmppq"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_tmppq")
+>>>>>>> fff1480f304bac2af3f7053944a0d759f2191ac8
