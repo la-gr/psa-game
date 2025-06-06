@@ -12,6 +12,8 @@ func _ready() -> void:
 	pop_up.set_visible(false)
 	var baby = get_node("kid gun")
 	baby.set_visible(false)
+	var crack = get_node("crack")
+	crack.set_visible(false)
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -38,7 +40,9 @@ func _input(event):
 	if event is InputEventKey and event.pressed: #user clicks the A key
 		if (event.keycode == KEY_A) and (gn == true):
 			var shot = get_node("gunshot")
+			var crak = get_node("crack")
 			shot.play()
+			crak.set_visible(true)
 
 func gun() -> void:
 	var shot = get_node("gunshot")
@@ -77,7 +81,6 @@ func _on_pop_but_pressed() -> void:
 	await get_tree().create_timer(0.7).timeout
 	group.set_visible(false)
 	pop_up.set_visible(false)
-	gun()
 
 func _on_button_pressed() -> void:
 	but_click(0)

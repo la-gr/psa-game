@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=70 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -55,6 +55,7 @@
 [ext_resource type="Texture2D" uid="uid://do43ylmgqopg" path="res://images_game/items/titles/phonedesc.png" id="48_co66k"]
 [ext_resource type="Texture2D" uid="uid://dpclm3rdo71ec" path="res://images_game/items/titles/chesdesc.png" id="49_1mvxv"]
 [ext_resource type="Texture2D" uid="uid://dnwgx0j4uws1r" path="res://images_game/items/titles/babydesc.png" id="50_v8ppe"]
+[ext_resource type="Texture2D" uid="uid://7o5dwgo8kylx" path="res://images_game/screescrak.png" id="54_1g2yp"]
 [ext_resource type="Texture2D" uid="uid://bill0osuamp4r" path="res://images_game/hearts-removebg-preview.png" id="54_xxd4g"]
 [ext_resource type="Texture2D" uid="uid://b5dobxhsl0ctc" path="res://images_game/hearts2-removebg-preview.png" id="55_u07l3"]
 [ext_resource type="Texture2D" uid="uid://eqs6mdfauwd8" path="res://images_game/hearts3-removebg-preview.png" id="56_7e23c"]
@@ -253,7 +254,7 @@ texture = ExtResource("2_blukf")
 offset_left = 273.0
 offset_top = 32.0
 offset_right = 904.0
-offset_bottom = 518.0
+offset_bottom = 520.0
 vertical_scroll_mode = 2
 script = ExtResource("3_100w2")
 
@@ -367,6 +368,11 @@ position = Vector2(100, 147)
 scale = Vector2(0.375691, 0.351145)
 sprite_frames = SubResource("SpriteFrames_nqr8k")
 frame_progress = 0.736581
+
+[node name="link1" type="LinkButton" parent="scroll/FlowContainer/add1"]
+custom_minimum_size = Vector2(200, 310)
+layout_mode = 2
+uri = "https://joyfoodsunshine.com/the-most-amazing-chocolate-chip-cookies/"
 
 [node name="flour" type="FlowContainer" parent="scroll/FlowContainer"]
 layout_mode = 2
@@ -539,6 +545,11 @@ position = Vector2(118.375, 112)
 scale = Vector2(0.338574, 0.401338)
 sprite_frames = SubResource("SpriteFrames_eyvje")
 
+[node name="link2" type="LinkButton" parent="scroll/FlowContainer/add2"]
+custom_minimum_size = Vector2(230, 230)
+layout_mode = 2
+uri = "https://www.canadiantire.ca/en/cat/home/kitchenware/kitchen-tools-gadgets/kitchen-utensil-sets-DC0001073.html"
+
 [node name="Tree" type="FlowContainer" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
@@ -708,13 +719,15 @@ custom_minimum_size = Vector2(230, 0)
 layout_mode = 2
 theme_override_constants/h_separation = 20
 
-[node name="ad3" type="TextureRect" parent="scroll/FlowContainer/add3"]
-custom_minimum_size = Vector2(350, 200)
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 0
+[node name="Sprite2D" type="Sprite2D" parent="scroll/FlowContainer/add3"]
+position = Vector2(173, 114)
+scale = Vector2(1.76768, 1)
 texture = ExtResource("22_1s2og")
-expand_mode = 1
+
+[node name="link3" type="LinkButton" parent="scroll/FlowContainer/add3"]
+custom_minimum_size = Vector2(350, 240)
+layout_mode = 2
+uri = "https://www.astro.ca/products/astro-original-balkan/?lang=fr"
 
 [node name="worm2" type="FlowContainer" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(100, 0)
@@ -891,6 +904,11 @@ scale = Vector2(0.334507, 0.590994)
 sprite_frames = SubResource("SpriteFrames_06x5d")
 frame_progress = 0.106973
 
+[node name="link4" type="LinkButton" parent="scroll/FlowContainer/add4"]
+custom_minimum_size = Vector2(120, 400)
+layout_mode = 2
+uri = "https://www.amazon.ca/s?k=t-+shirts&gad_source=1&hvadid=588817488919&hvdev=c&hvexpln=0&hvlocphy=9000686&hvnetw=g&hvocijid=4207621105255373160--&hvqmt=e&hvrand=4207621105255373160&hvtargid=kwd-1212488868&hydadcr=13439_13405835&mcid=8d0da4f3071a3fe9b0dd97dc1f217b8c&tag=googcana-20&ref=pd_sl_9dm6yvldkp_e"
+
 [node name="add5" type="FlowContainer" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
@@ -900,6 +918,11 @@ theme_override_constants/h_separation = 20
 position = Vector2(70, 160)
 scale = Vector2(0.310638, 0.557408)
 sprite_frames = SubResource("SpriteFrames_vbglq")
+
+[node name="link5" type="LinkButton" parent="scroll/FlowContainer/add5"]
+custom_minimum_size = Vector2(140, 400)
+layout_mode = 2
+uri = "https://www.blundstone.ca/collections/sale?srsltid=AfmBOorP54byFCIEnZTO8KjNlJjxg5UFcekf5K2gYCtaquJJWcE4iTVG"
 
 [node name="cheese" type="FlowContainer" parent="scroll/FlowContainer"]
 custom_minimum_size = Vector2(600, 250)
@@ -1002,6 +1025,12 @@ offset_top = 82.9834
 offset_right = -9.34238
 offset_bottom = 158.983
 icon = ExtResource("8_mgp33")
+
+[node name="crack" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(600, 300)
+scale = Vector2(0.638889, 0.513889)
+texture = ExtResource("54_1g2yp")
 
 [node name="lives" type="AnimatedSprite2D" parent="."]
 position = Vector2(1031, 55)
