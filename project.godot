@@ -26,3 +26,6 @@ window/stretch/mode="canvas_items"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[gdextension]
+files=[ "res://addons/godot-git-plugin/git_plugin.gdextension" ]
