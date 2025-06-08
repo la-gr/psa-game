@@ -1,0 +1,452 @@
+[gd_scene load_steps=22 format=3 uid="uid://b4yu7y18rbfh3"]
+
+[ext_resource type="Script" uid="uid://bv2fxxhc6vu6n" path="res://mainscreen.gd" id="1_kvqn4"]
+[ext_resource type="Texture2D" uid="uid://c4xlyp8r8ysri" path="res://icons/mainscreen bg.png" id="2_vlbu8"]
+[ext_resource type="FontFile" uid="uid://crwdijpw1lqcy" path="res://fonts/Cabin_Sketch/CabinSketch-Regular.ttf" id="3_vlbu8"]
+[ext_resource type="Texture2D" uid="uid://5cggguqd211d" path="res://icons/play.png" id="4_vlbu8"]
+[ext_resource type="Texture2D" uid="uid://dysbfae6hfxud" path="res://icons/options.png" id="5_0iccn"]
+[ext_resource type="Script" uid="uid://c1txns0f6so4d" path="res://volume_slider.gd" id="5_6of4a"]
+[ext_resource type="Texture2D" uid="uid://4memuvqs1y2k" path="res://icons/help.png" id="6_sogwd"]
+[ext_resource type="Texture2D" uid="uid://k25rprw6uxyw" path="res://icons/ad1.png" id="7_4ydbd"]
+[ext_resource type="Texture2D" uid="uid://df36hgu4nm0bg" path="res://icons/exit.png" id="7_54ydl"]
+[ext_resource type="Texture2D" uid="uid://do1cqehqt7a3b" path="res://icons/panel bg.png" id="8_54ydl"]
+[ext_resource type="Texture2D" uid="uid://csg2552nyv356" path="res://icons/ad2.png" id="8_vue7p"]
+[ext_resource type="FontFile" uid="uid://b1l351w2i0vki" path="res://fonts/SSShinb7Regular.ttf" id="9_5b43f"]
+[ext_resource type="Texture2D" uid="uid://dxof8afuidtej" path="res://icons/back.png" id="10_35uih"]
+[ext_resource type="Texture2D" uid="uid://bjmn63qg2vg4q" path="res://icons/backarrow.png" id="10_dtbag"]
+[ext_resource type="Texture2D" uid="uid://cu2n5jrdxognj" path="res://icons/backarrow_hover.png" id="11_d4d15"]
+[ext_resource type="Texture2D" uid="uid://bxve0vdexw34p" path="res://icons/forwardbutton.png" id="12_6nwgw"]
+[ext_resource type="Texture2D" uid="uid://d3rcyahb2ft1b" path="res://icons/forwardbutton_hover.png" id="13_skk76"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akw4d"]
+texture = ExtResource("8_54ydl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dtbag"]
+texture = ExtResource("8_54ydl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4d15"]
+texture = ExtResource("8_54ydl")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n4ag8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_4ydbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vue7p")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_kvqn4")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(572, 323)
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("2_vlbu8")
+
+[node name="mainscreen" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(600, 500)
+offset_left = 280.0
+offset_top = 29.0
+offset_right = 880.0
+offset_bottom = 621.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="mainscreen"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -46
+theme_override_fonts/normal_font = ExtResource("3_vlbu8")
+theme_override_font_sizes/normal_font_size = 130
+text = "GAME TITLE"
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="Play" type="Button" parent="mainscreen"]
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+size_flags_vertical = 3
+icon = ExtResource("4_vlbu8")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="mainscreen"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="mainscreen/MarginContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Options" type="Button" parent="mainscreen/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("5_0iccn")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Help" type="Button" parent="mainscreen/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+icon = ExtResource("6_sogwd")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Exit" type="Button" parent="mainscreen"]
+layout_mode = 2
+size_flags_vertical = 3
+icon = ExtResource("7_54ydl")
+flat = true
+offset_left = 696.0
+offset_top = 384.0
+offset_right = 1192.0
+offset_bottom = 592.0
+icon = ExtResource("3_huavm")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Options" type="Button" parent="."]
+offset_left = 560.0
+offset_top = 640.0
+offset_right = 888.0
+offset_bottom = 784.0
+icon = ExtResource("4_luk67")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Help" type="Button" parent="."]
+offset_left = 912.0
+offset_top = 648.0
+offset_right = 1264.0
+offset_bottom = 768.0
+icon = ExtResource("5_etpox")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 856.0
+offset_top = 992.0
+offset_right = 992.0
+offset_bottom = 1048.0
+icon = ExtResource("6_hn4n6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Level Select" type="Panel" parent="."]
+visible = false
+z_index = 5
+offset_left = 252.0
+offset_top = 261.0
+offset_right = 901.0
+offset_bottom = 624.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_akw4d")
+
+[node name="Level Select VBox" type="VBoxContainer" parent="Level Select"]
+z_index = 5
+layout_mode = 0
+offset_left = 33.0
+offset_top = 12.0
+offset_right = 616.0
+offset_bottom = 356.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Episode Label" type="Label" parent="Level Select/Level Select VBox"]
+z_index = 7
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 45
+text = "EpiSodes"
+horizontal_alignment = 1
+
+[node name="episode select" type="HBoxContainer" parent="Level Select/Level Select VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="backbutton margin" type="MarginContainer" parent="Level Select/Level Select VBox/episode select"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="backwards button" type="TextureButton" parent="Level Select/Level Select VBox/episode select/backbutton margin"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("10_dtbag")
+texture_hover = ExtResource("11_d4d15")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="episode container" type="MarginContainer" parent="Level Select/Level Select VBox/episode select"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 18
+
+[node name="BlackMarket" type="Button" parent="Level Select/Level Select VBox/episode select/episode container"]
+z_index = 3
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "BlackMarket"
+
+[node name="forwardbutton margin" type="MarginContainer" parent="Level Select/Level Select VBox/episode select"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 75
+theme_override_constants/margin_bottom = 75
+
+[node name="forwardbutton" type="TextureButton" parent="Level Select/Level Select VBox/episode select/forwardbutton margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("12_6nwgw")
+texture_hover = ExtResource("13_skk76")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="back container" type="MarginContainer" parent="Level Select/Level Select VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_bottom = 10
+
+[node name="ExitLevels" type="TextureButton" parent="Level Select/Level Select VBox/back container"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("10_35uih")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="OptionsMenu" type="Panel" parent="."]
+visible = false
+z_index = 5
+offset_left = 252.0
+offset_top = 259.0
+offset_right = 902.0
+offset_bottom = 624.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_dtbag")
+
+[node name="OptionsMenu VBox" type="VBoxContainer" parent="OptionsMenu"]
+z_index = 5
+layout_mode = 0
+offset_left = 29.0
+offset_top = 12.0
+offset_right = 619.0
+offset_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox"]
+z_index = 7
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 45
+text = "OPtionS"
+horizontal_alignment = 1
+
+[node name="VolumeSliderMargins" type="MarginContainer" parent="OptionsMenu/OptionsMenu VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="MasterVolume VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MasterVolume Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_6of4a")
+
+[node name="SoundEffects VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="SoundEffects Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_6of4a")
+
+[node name="BackgroundMusic VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="BackgroundMusic Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_6of4a")
+
+[node name="Voicelines VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 30
+text = "Master Volume"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="VoiceLines Slider" type="HSlider" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox"]
+layout_mode = 2
+size_flags_vertical = 2
+max_value = 1.0
+step = 0.05
+script = ExtResource("5_6of4a")
+
+[node name="back container" type="MarginContainer" parent="OptionsMenu/OptionsMenu VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 132
+theme_override_constants/margin_bottom = 10
+
+[node name="ExitOptions" type="TextureButton" parent="OptionsMenu/OptionsMenu VBox/back container"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("10_35uih")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HelpPanel" type="Panel" parent="."]
+visible = false
+z_index = 5
+offset_left = 247.0
+offset_top = 262.0
+offset_right = 904.0
+offset_bottom = 627.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_d4d15")
+
+[node name="HelpVBox" type="VBoxContainer" parent="HelpPanel"]
+z_index = 5
+layout_mode = 0
+offset_left = 33.0
+offset_top = 12.0
+offset_right = 625.0
+offset_bottom = 360.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="HelpPanel/HelpVBox"]
+z_index = 7
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_5b43f")
+theme_override_font_sizes/font_size = 45
+text = "HelP"
+horizontal_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HelpPanel/HelpVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel/HelpVBox/MarginContainer"]
+custom_minimum_size = Vector2(0, 230)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("9_5b43f")
+theme_override_font_sizes/normal_font_size = 20
+text = "The black market is a serious problem that can affect anyone—even kids. It involves people secretly buying and selling things without following the law. These things can include unsafe toys, fake electronics, harmful medicine, or even stolen items. While they might seem cheaper or easy to get, they are often dangerous and can hurt you or others. The people behind black market sales don’t care about safety or fairness—they only want to make money, no matter who gets hurt. Getting involved in this kind of illegal activity, even by accident, can lead to serious consequences, including putting yourself or your family at risk. That’s why it’s important to stay away from anything that feels suspicious, and to always buy from trusted, legal sources. If you ever find yourself on the black market, if someone tries to sell you something secretly, or if you’re unsure whether something is safe or legal, talk to a parent, teacher, or another adult you trust right away. You can also report any suspicious activity to the proper authorities. To get help or report a concern, contact your local police department or reach out to Crime Stoppers at 1-800-222-TIPS (8477). You can also visit www.cybertip.ca to report anything unsafe online. Your safety matters. Make smart choices, and say no to the black market.
+
+"
+
+[node name="back container" type="MarginContainer" parent="HelpPanel/HelpVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 10
+
+[node name="ExitHelp" type="TextureButton" parent="HelpPanel/HelpVBox/back container"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("10_35uih")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Ad1" type="AnimatedSprite2D" parent="."]
+position = Vector2(137.125, 324.703)
+scale = Vector2(0.902219, 1.15576)
+sprite_frames = SubResource("SpriteFrames_n4ag8")
+
+[node name="Ad2" type="AnimatedSprite2D" parent="."]
+position = Vector2(1015.5, 324.75)
+scale = Vector2(0.570332, 0.94952)
+sprite_frames = SubResource("SpriteFrames_n4ag8")
+frame = 1
+frame_progress = 0.545454
+
+[connection signal="pressed" from="mainscreen/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="mainscreen/MarginContainer/HBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="mainscreen/MarginContainer/HBoxContainer/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="mainscreen/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Level Select/Level Select VBox/episode select/episode container/BlackMarket" to="." method="_on_black_market_pressed"]
+[connection signal="pressed" from="Level Select/Level Select VBox/back container/ExitLevels" to="." method="_on_exit_levels_pressed"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" method="_on_value_changed"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox/SoundEffects Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox/SoundEffects Slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox/SoundEffects Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox/SoundEffects Slider" method="_on_value_changed"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox/BackgroundMusic Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox/BackgroundMusic Slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox/BackgroundMusic Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox/BackgroundMusic Slider" method="_on_value_changed"]
+[connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" method="_on_value_changed"]
+[connection signal="pressed" from="OptionsMenu/OptionsMenu VBox/back container/ExitOptions" to="." method="_on_exit_options_pressed"]
+[connection signal="pressed" from="HelpPanel/HelpVBox/back container/ExitHelp" to="." method="_on_exit_help_pressed"]
