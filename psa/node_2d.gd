@@ -14,6 +14,8 @@ func _ready() -> void:
 	baby.set_visible(false)
 	var crack = get_node("crack")
 	crack.set_visible(false)
+	var popupAd = get_node("popup ad")
+	popupAd.set_visible(false)
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -114,3 +116,14 @@ func _on_button_15_pressed() -> void:
 	but_click(14)
 func _on_button_16_pressed() -> void:
 	but_click(15)
+
+
+func _on_close_popup_pressed() -> void:
+	var popupAd = get_node("popup ad")
+	popupAd.set_visible(false)
+	popupAd.frame = (popupAd.frame + 1) % popupAd.sprite_frames.get_frame_count(popupAd.animation)
+
+
+func _on_popup_timer_timeout() -> void:
+	var popupAd = get_node("popup ad")
+	popupAd.set_visible(true)

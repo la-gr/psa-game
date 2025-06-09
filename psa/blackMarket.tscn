@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=77 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -61,6 +61,12 @@
 [ext_resource type="Texture2D" uid="uid://eqs6mdfauwd8" path="res://images_game/hearts3-removebg-preview.png" id="56_7e23c"]
 [ext_resource type="Texture2D" uid="uid://b88w0sk7nbpyg" path="res://images_game/hearts4-removebg-preview.png" id="57_0bn5j"]
 [ext_resource type="Texture2D" uid="uid://clge48skph6ji" path="res://images_game/babywithgun.png" id="60_1g2yp"]
+[ext_resource type="Texture2D" uid="uid://cnhknssaqxj7b" path="res://ads/bank ad.png" id="62_bp05x"]
+[ext_resource type="Texture2D" uid="uid://cibjjw332yxo6" path="res://ads/cereal ad.png" id="63_kqiam"]
+[ext_resource type="Texture2D" uid="uid://dspdy1fa04bmv" path="res://ads/energydrink ad.png" id="64_y35sw"]
+[ext_resource type="Texture2D" uid="uid://3a4ls7l7w5lj" path="res://ads/phone ad.png" id="65_0byiq"]
+[ext_resource type="Texture2D" uid="uid://bcycv5ftgtsms" path="res://ads/truck ad.png" id="66_d8a27"]
+[ext_resource type="Texture2D" uid="uid://c42kt1vbgoe3d" path="res://ads/vitamins ad.png" id="67_a3gg3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
 animations = [{
@@ -184,6 +190,32 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f0sie"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_bp05x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_kqiam")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_y35sw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_0byiq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_d8a27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_a3gg3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1g2yp"]
@@ -1026,6 +1058,26 @@ offset_right = -9.34238
 offset_bottom = 158.983
 icon = ExtResource("8_mgp33")
 
+[node name="popup ad" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(570, 276)
+scale = Vector2(0.465573, 0.453125)
+sprite_frames = SubResource("SpriteFrames_f0sie")
+frame = 5
+frame_progress = 0.919358
+
+[node name="close popup" type="Button" parent="popup ad"]
+offset_left = 326.0
+offset_top = -466.0
+offset_right = 371.0
+offset_bottom = -402.0
+theme_override_font_sizes/font_size = 40
+text = "X"
+
+[node name="popup timer" type="Timer" parent="popup ad"]
+wait_time = 3.184
+autostart = true
+
 [node name="crack" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(600, 300)
@@ -1075,3 +1127,5 @@ texture = ExtResource("60_1g2yp")
 [connection signal="pressed" from="scroll/FlowContainer/cheese/Button15" to="." method="_on_button_15_pressed"]
 [connection signal="pressed" from="scroll/FlowContainer/baby/Button16" to="." method="_on_button_16_pressed"]
 [connection signal="pressed" from="popup/popBut" to="." method="_on_pop_but_pressed"]
+[connection signal="pressed" from="popup ad/close popup" to="." method="_on_close_popup_pressed"]
+[connection signal="timeout" from="popup ad/popup timer" to="." method="_on_popup_timer_timeout"]

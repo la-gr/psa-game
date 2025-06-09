@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://crwdijpw1lqcy" path="res://fonts/Cabin_Sketch/CabinSketch-Regular.ttf" id="3_vlbu8"]
 [ext_resource type="Texture2D" uid="uid://5cggguqd211d" path="res://icons/play.png" id="4_vlbu8"]
 [ext_resource type="Texture2D" uid="uid://dysbfae6hfxud" path="res://icons/options.png" id="5_0iccn"]
-[ext_resource type="Script" path="res://volume_slider.gd" id="5_6of4a"]
+[ext_resource type="Script" uid="uid://c1txns0f6so4d" path="res://volume_slider.gd" id="5_6of4a"]
 [ext_resource type="Texture2D" uid="uid://4memuvqs1y2k" path="res://icons/help.png" id="6_sogwd"]
 [ext_resource type="Texture2D" uid="uid://k25rprw6uxyw" path="res://icons/ad1.png" id="7_4ydbd"]
 [ext_resource type="Texture2D" uid="uid://df36hgu4nm0bg" path="res://icons/exit.png" id="7_54ydl"]
