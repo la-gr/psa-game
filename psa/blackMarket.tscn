@@ -1116,7 +1116,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_0byiq")
 theme_override_styles/normal = SubResource("StyleBoxFlat_d8a27")
 text = "yes"
 
-[node name="close popup" type="Button" parent="popup trap"]
+[node name="close trap popup" type="Button" parent="popup trap"]
 offset_left = -62.2889
 offset_top = 80.8042
 offset_right = 113.711
@@ -1127,8 +1127,8 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_a3gg3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_f0sie")
 text = "no"
 
-[node name="popup timer" type="Timer" parent="popup trap"]
-wait_time = 20.0
+[node name="popup trap timer" type="Timer" parent="popup trap"]
+wait_time = 22.0
 autostart = true
 
 [node name="crack" type="Sprite2D" parent="."]
@@ -1182,6 +1182,6 @@ texture = ExtResource("60_1g2yp")
 [connection signal="pressed" from="popup/popBut" to="." method="_on_pop_but_pressed"]
 [connection signal="pressed" from="popup ad/close popup" to="." method="_on_close_popup_pressed"]
 [connection signal="timeout" from="popup ad/popup timer" to="." method="_on_popup_timer_timeout"]
-[connection signal="pressed" from="popup trap/confirm usage" to="." method="_on_close_popup_pressed"]
-[connection signal="pressed" from="popup trap/close popup" to="." method="_on_close_popup_pressed"]
-[connection signal="timeout" from="popup trap/popup timer" to="." method="_on_popup_timer_timeout"]
+[connection signal="pressed" from="popup trap/confirm usage" to="." method="_on_confirm_usage_pressed"]
+[connection signal="pressed" from="popup trap/close trap popup" to="." method="_on_close_trap_popup_pressed"]
+[connection signal="timeout" from="popup trap/popup trap timer" to="." method="_on_popup_trap_timer_timeout"]
