@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=83 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -61,6 +61,7 @@
 [ext_resource type="Texture2D" uid="uid://eqs6mdfauwd8" path="res://images_game/hearts3-removebg-preview.png" id="56_7e23c"]
 [ext_resource type="Texture2D" uid="uid://b88w0sk7nbpyg" path="res://images_game/hearts4-removebg-preview.png" id="57_0bn5j"]
 [ext_resource type="Texture2D" uid="uid://clge48skph6ji" path="res://images_game/babywithgun.png" id="60_1g2yp"]
+[ext_resource type="Texture2D" uid="uid://dvxdn13cf3y3b" path="res://ads/are you using the black market.png" id="60_kqiam"]
 [ext_resource type="Texture2D" uid="uid://cnhknssaqxj7b" path="res://ads/bank ad.png" id="62_bp05x"]
 [ext_resource type="Texture2D" uid="uid://cibjjw332yxo6" path="res://ads/cereal ad.png" id="63_kqiam"]
 [ext_resource type="Texture2D" uid="uid://dspdy1fa04bmv" path="res://ads/energydrink ad.png" id="64_y35sw"]
@@ -217,6 +218,29 @@ animations = [{
 "name": &"default",
 "speed": 1.0
 }]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y35sw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_kqiam")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0byiq"]
+bg_color = Color(0.415214, 0.415215, 0.415214, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8a27"]
+bg_color = Color(0.295131, 0.295131, 0.295131, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a3gg3"]
+bg_color = Color(0.368752, 0.667524, 0.195178, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f0sie"]
+bg_color = Color(0.288457, 0.597118, 0.176543, 1)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1g2yp"]
 animations = [{
@@ -1063,8 +1087,6 @@ visible = false
 position = Vector2(570, 276)
 scale = Vector2(0.465573, 0.453125)
 sprite_frames = SubResource("SpriteFrames_f0sie")
-frame = 5
-frame_progress = 0.919358
 
 [node name="close popup" type="Button" parent="popup ad"]
 offset_left = 326.0
@@ -1075,7 +1097,38 @@ theme_override_font_sizes/font_size = 40
 text = "X"
 
 [node name="popup timer" type="Timer" parent="popup ad"]
-wait_time = 3.184
+wait_time = 20.0
+autostart = true
+
+[node name="popup trap" type="AnimatedSprite2D" parent="."]
+position = Vector2(570, 288)
+scale = Vector2(0.465573, 0.396019)
+sprite_frames = SubResource("SpriteFrames_y35sw")
+
+[node name="confirm usage" type="Button" parent="popup trap"]
+offset_left = 131.021
+offset_top = 80.8041
+offset_right = 307.021
+offset_bottom = 144.804
+theme_override_colors/icon_normal_color = Color(0.772549, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_0byiq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_d8a27")
+text = "yes"
+
+[node name="close popup" type="Button" parent="popup trap"]
+offset_left = -62.2889
+offset_top = 80.8042
+offset_right = 113.711
+offset_bottom = 144.804
+theme_override_colors/icon_normal_color = Color(0.772549, 0, 0, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/hover = SubResource("StyleBoxFlat_a3gg3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_f0sie")
+text = "no"
+
+[node name="popup timer" type="Timer" parent="popup trap"]
+wait_time = 20.0
 autostart = true
 
 [node name="crack" type="Sprite2D" parent="."]
@@ -1129,3 +1182,6 @@ texture = ExtResource("60_1g2yp")
 [connection signal="pressed" from="popup/popBut" to="." method="_on_pop_but_pressed"]
 [connection signal="pressed" from="popup ad/close popup" to="." method="_on_close_popup_pressed"]
 [connection signal="timeout" from="popup ad/popup timer" to="." method="_on_popup_timer_timeout"]
+[connection signal="pressed" from="popup trap/confirm usage" to="." method="_on_close_popup_pressed"]
+[connection signal="pressed" from="popup trap/close popup" to="." method="_on_close_popup_pressed"]
+[connection signal="timeout" from="popup trap/popup timer" to="." method="_on_popup_timer_timeout"]
