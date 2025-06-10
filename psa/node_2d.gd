@@ -4,6 +4,7 @@ var tween
 var num = 1
 var hand1
 var gn = false
+var bn = false
 var items = ["Cyber", "dog", "flour", "Cat", "House", "Couch", 'Tree', "foot", "worm", "shoe", "worm2", "man", "Baby pic", "Phone", "cheese", "baby"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
@@ -14,9 +15,9 @@ func _ready() -> void:
 	baby.set_visible(false)
 	var crack = get_node("crack")
 	crack.set_visible(false)
-	var popupAd = get_node("popup ad")
-	popupAd.set_visible(false)
-	
+	var gunText = get_node("clikGun")
+	gunText.set_visible(false)
+
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta) -> void:
@@ -41,10 +42,30 @@ func _input(event):
 			tween.tween_property(hand1, "position", Vector2(843.0, 421.0), 0.2)
 	if event is InputEventKey and event.pressed: #user clicks the A key
 		if (event.keycode == KEY_A) and (gn == true):
+			var handGun = get_node("clikGun/handGun")
+			handGun.set_frame(1)
+			await get_tree().create_timer(0.5).timeout #waits
+			handGun.set_frame(2)
 			var shot = get_node("gunshot")
 			var crak = get_node("crack")
 			shot.play()
 			crak.set_visible(true)
+			await get_tree().create_timer(0.3).timeout #waits
+			handGun.set_frame(1)
+			await get_tree().create_timer(0.7).timeout #waits
+			handGun.set_frame(0)
+			life_lost()
+		if (event.keycode == KEY_A) and (bn == true):
+			#play sound of opneing blinds
+			await get_tree().create_timer(1.5).timeout #wait that many seconds
+			#set screen back to normal and get rid of the text
+			var white = get_node("white")
+			var black = get_node("black")
+			white.set_visible(false)
+			black.set_visible(false)
+			var clikBlind = get_node("clikBlind") 
+			clikBlind.set_visible(true)
+			bn = false
 
 func gun() -> void:
 	var shot = get_node("gunshot")
@@ -52,11 +73,30 @@ func gun() -> void:
 	await get_tree().create_timer(1.5).timeout #waits
 	var baby = get_node("kid gun")
 	baby.set_visible(true)
-	await get_tree().create_timer(5).timeout #waits
+	await get_tree().create_timer(3).timeout #waits
+	#take gun sound
+	await get_tree().create_timer(1).timeout #waits
 	#have gun in left hand
-	#press A to shoot at bottom
+	var hand2 = get_node("hand2")
+	hand2.set_visible(false)
+	#press A to shoot, text
+	var gunText = get_node("clikGun")
+	gunText.set_visible(true)
 	gn = true
 	baby.set_visible(false)
+	
+func blinds() -> void:
+	#make screen dark and everthing else light
+	var white = get_node("white")
+	var black = get_node("black")
+	white.set_visible(true)
+	black.set_visible(true)
+	#put voice note of mom
+	#wait that amount of seconds
+	#show text to click B to close blinds
+	var clikBlind = get_node("clikBlind") 
+	clikBlind.set_visible(true)
+	bn = true
 
 func life_lost() -> void:
 	var lives = get_node("lives")
@@ -116,15 +156,3 @@ func _on_button_15_pressed() -> void:
 	but_click(14)
 func _on_button_16_pressed() -> void:
 	but_click(15)
-
-
-func _on_close_popup_pressed() -> void:
-	var popupAd = get_node("popup ad")
-	popupAd.set_visible(false)
-	popupAd.frame = (popupAd.frame + 1) % popupAd.sprite_frames.get_frame_count(popupAd.animation)
-	
-
-
-func _on_popup_timer_timeout() -> void:
-	var popupAd = get_node("popup ad")
-	popupAd.set_visible(true)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=76 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -61,13 +61,6 @@
 [ext_resource type="Texture2D" uid="uid://eqs6mdfauwd8" path="res://images_game/hearts3-removebg-preview.png" id="56_7e23c"]
 [ext_resource type="Texture2D" uid="uid://b88w0sk7nbpyg" path="res://images_game/hearts4-removebg-preview.png" id="57_0bn5j"]
 [ext_resource type="Texture2D" uid="uid://clge48skph6ji" path="res://images_game/babywithgun.png" id="60_1g2yp"]
-[ext_resource type="Texture2D" uid="uid://dvxdn13cf3y3b" path="res://ads/are you using the black market.png" id="60_kqiam"]
-[ext_resource type="Texture2D" uid="uid://cnhknssaqxj7b" path="res://ads/bank ad.png" id="62_bp05x"]
-[ext_resource type="Texture2D" uid="uid://cibjjw332yxo6" path="res://ads/cereal ad.png" id="63_kqiam"]
-[ext_resource type="Texture2D" uid="uid://dspdy1fa04bmv" path="res://ads/energydrink ad.png" id="64_y35sw"]
-[ext_resource type="Texture2D" uid="uid://3a4ls7l7w5lj" path="res://ads/phone ad.png" id="65_0byiq"]
-[ext_resource type="Texture2D" uid="uid://bcycv5ftgtsms" path="res://ads/truck ad.png" id="66_d8a27"]
-[ext_resource type="Texture2D" uid="uid://c42kt1vbgoe3d" path="res://ads/vitamins ad.png" id="67_a3gg3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
 animations = [{
@@ -197,22 +190,22 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("62_bp05x")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("63_kqiam")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("64_y35sw")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("65_0byiq")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("66_d8a27")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("67_a3gg3")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -223,7 +216,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("60_kqiam")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
