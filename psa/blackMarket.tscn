@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=80 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -60,7 +60,10 @@
 [ext_resource type="Texture2D" uid="uid://b5dobxhsl0ctc" path="res://images_game/hearts2-removebg-preview.png" id="55_u07l3"]
 [ext_resource type="Texture2D" uid="uid://eqs6mdfauwd8" path="res://images_game/hearts3-removebg-preview.png" id="56_7e23c"]
 [ext_resource type="Texture2D" uid="uid://b88w0sk7nbpyg" path="res://images_game/hearts4-removebg-preview.png" id="57_0bn5j"]
-[ext_resource type="Texture2D" uid="uid://clge48skph6ji" path="res://images_game/babywithgun.png" id="60_1g2yp"]
+[ext_resource type="Texture2D" uid="uid://yvhpfl1sbli3" path="res://images_game/handGunidle.png" id="59_v8ppe"]
+[ext_resource type="Texture2D" uid="uid://chxiu8dhf6f4b" path="res://images_game/handGunready.png" id="60_3jr4o"]
+[ext_resource type="Texture2D" uid="uid://ci3xtc6g6ek24" path="res://images_game/handGunshoot.png" id="61_yjxue"]
+[ext_resource type="Texture2D" uid="uid://beo6muj32u4vh" path="res://images_game/babyWgun.png" id="64_v8ppe"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
 animations = [{
@@ -249,6 +252,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("57_0bn5j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bp05x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_v8ppe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_3jr4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_yjxue")
 }],
 "loop": true,
 "name": &"default",
@@ -1094,6 +1114,7 @@ wait_time = 20.0
 autostart = true
 
 [node name="popup trap" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(570, 288)
 scale = Vector2(0.465573, 0.396019)
 sprite_frames = SubResource("SpriteFrames_y35sw")
@@ -1135,6 +1156,11 @@ position = Vector2(1031, 55)
 scale = Vector2(0.215021, 0.224708)
 sprite_frames = SubResource("SpriteFrames_1g2yp")
 
+[node name="handGun" type="AnimatedSprite2D" parent="."]
+position = Vector2(356, 529)
+scale = Vector2(0.638889, 0.731945)
+sprite_frames = SubResource("SpriteFrames_bp05x")
+
 [node name="hand1" type="AnimatedSprite2D" parent="."]
 position = Vector2(811, 504)
 scale = Vector2(0.76, 0.76)
@@ -1143,6 +1169,7 @@ centered = false
 offset = Vector2(-60, -100)
 
 [node name="hand2" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(308, 391)
 scale = Vector2(0.775, 0.775)
 sprite_frames = SubResource("SpriteFrames_100w2")
@@ -1151,10 +1178,9 @@ offset = Vector2(-950, -50)
 flip_h = true
 
 [node name="kid gun" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(585.006, 326.013)
-scale = Vector2(0.876683, 0.840323)
-texture = ExtResource("60_1g2yp")
+position = Vector2(579.5, 332)
+scale = Vector2(0.604688, 0.612963)
+texture = ExtResource("64_v8ppe")
 
 [connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="scroll/FlowContainer/dog/Button2" to="." method="_on_button_2_pressed"]

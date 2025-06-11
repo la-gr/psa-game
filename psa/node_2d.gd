@@ -42,7 +42,7 @@ func _input(event):
 			tween.tween_property(hand1, "position", Vector2(843.0, 421.0), 0.2)
 	if event is InputEventKey and event.pressed: #user clicks the A key
 		if (event.keycode == KEY_A) and (gn == true):
-			var handGun = get_node("clikGun/handGun")
+			var handGun = get_node("handGun")
 			handGun.set_frame(1)
 			await get_tree().create_timer(0.5).timeout #waits
 			handGun.set_frame(2)
