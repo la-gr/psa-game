@@ -1,4 +1,4 @@
-[gd_scene load_steps=83 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=85 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dj77txdnq5ynh" path="res://images_game/cybertruck.png" id="4_hut4a"]
 [ext_resource type="Texture2D" uid="uid://d1wkgpundc2eb" path="res://images_game/items/IMG_7424.jpg" id="5_cc6fy"]
 [ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
+[ext_resource type="Texture2D" uid="uid://cwebbi2isj0w3" path="res://images_game/white.png" id="5_y35sw"]
 [ext_resource type="FontFile" uid="uid://dijudjs2awvrb" path="res://Space_Mono/SpaceMono-Bold.ttf" id="7_mgp33"]
 [ext_resource type="Texture2D" uid="uid://dc3o0hcfakak6" path="res://images_game/butReal.png" id="8_mgp33"]
 [ext_resource type="Texture2D" uid="uid://hl0g4swc5bjd" path="res://images_game/items/IMG_7425.jpg" id="8_sl02u"]
@@ -58,16 +59,16 @@
 [ext_resource type="Texture2D" uid="uid://7o5dwgo8kylx" path="res://images_game/screescrak.png" id="54_1g2yp"]
 [ext_resource type="Texture2D" uid="uid://bill0osuamp4r" path="res://images_game/hearts-removebg-preview.png" id="54_xxd4g"]
 [ext_resource type="Texture2D" uid="uid://b5dobxhsl0ctc" path="res://images_game/hearts2-removebg-preview.png" id="55_u07l3"]
+[ext_resource type="Texture2D" uid="uid://do71271txjldp" path="res://images_game/black.png" id="56_0byiq"]
 [ext_resource type="Texture2D" uid="uid://eqs6mdfauwd8" path="res://images_game/hearts3-removebg-preview.png" id="56_7e23c"]
 [ext_resource type="Texture2D" uid="uid://b88w0sk7nbpyg" path="res://images_game/hearts4-removebg-preview.png" id="57_0bn5j"]
-[ext_resource type="Texture2D" uid="uid://clge48skph6ji" path="res://images_game/babywithgun.png" id="60_1g2yp"]
-[ext_resource type="Texture2D" uid="uid://dvxdn13cf3y3b" path="res://ads/are you using the black market.png" id="60_kqiam"]
-[ext_resource type="Texture2D" uid="uid://cnhknssaqxj7b" path="res://ads/bank ad.png" id="62_bp05x"]
-[ext_resource type="Texture2D" uid="uid://cibjjw332yxo6" path="res://ads/cereal ad.png" id="63_kqiam"]
-[ext_resource type="Texture2D" uid="uid://dspdy1fa04bmv" path="res://ads/energydrink ad.png" id="64_y35sw"]
-[ext_resource type="Texture2D" uid="uid://3a4ls7l7w5lj" path="res://ads/phone ad.png" id="65_0byiq"]
-[ext_resource type="Texture2D" uid="uid://bcycv5ftgtsms" path="res://ads/truck ad.png" id="66_d8a27"]
-[ext_resource type="Texture2D" uid="uid://c42kt1vbgoe3d" path="res://ads/vitamins ad.png" id="67_a3gg3"]
+[ext_resource type="Texture2D" uid="uid://yvhpfl1sbli3" path="res://images_game/handGunidle.png" id="59_v8ppe"]
+[ext_resource type="Texture2D" uid="uid://chxiu8dhf6f4b" path="res://images_game/handGunready.png" id="60_3jr4o"]
+[ext_resource type="Texture2D" uid="uid://ci3xtc6g6ek24" path="res://images_game/handGunshoot.png" id="61_yjxue"]
+[ext_resource type="FontFile" uid="uid://dp1lmircrjetl" path="res://images_game/Space_Mono/SpaceMono-Regular.ttf" id="64_d8a27"]
+[ext_resource type="Texture2D" uid="uid://beo6muj32u4vh" path="res://images_game/babyWgun.png" id="64_v8ppe"]
+[ext_resource type="Texture2D" uid="uid://bdosvbuehnjwj" path="res://images_game/aKEY.png" id="65_a3gg3"]
+[ext_resource type="Texture2D" uid="uid://cj0i1c4m5mueu" path="res://images_game/bKEY.png" id="66_f0sie"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
 animations = [{
@@ -197,22 +198,22 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("62_bp05x")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("63_kqiam")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("64_y35sw")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("65_0byiq")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("66_d8a27")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": ExtResource("67_a3gg3")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -223,7 +224,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("60_kqiam")
+"texture": null
 }],
 "loop": true,
 "name": &"default",
@@ -256,6 +257,23 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("57_0bn5j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bp05x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_v8ppe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_3jr4o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_yjxue")
 }],
 "loop": true,
 "name": &"default",
@@ -301,10 +319,17 @@ stream = ExtResource("2_u07l3")
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0bn5j")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="bg" type="Sprite2D" parent="."]
 position = Vector2(578.511, 322.6)
 scale = Vector2(0.600741, 0.600741)
 texture = ExtResource("2_blukf")
+
+[node name="white" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.388235)
+position = Vector2(576.5, 328)
+scale = Vector2(1.925, 1.75269)
+texture = ExtResource("5_y35sw")
 
 [node name="scroll" type="ScrollContainer" parent="."]
 offset_left = 273.0
@@ -1101,6 +1126,7 @@ wait_time = 20.0
 autostart = true
 
 [node name="popup trap" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(570, 288)
 scale = Vector2(0.465573, 0.396019)
 sprite_frames = SubResource("SpriteFrames_y35sw")
@@ -1137,10 +1163,55 @@ position = Vector2(600, 300)
 scale = Vector2(0.638889, 0.513889)
 texture = ExtResource("54_1g2yp")
 
+[node name="black" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.905882)
+position = Vector2(582.5, 275.75)
+scale = Vector2(1.2992, 1.57348)
+texture = ExtResource("56_0byiq")
+
 [node name="lives" type="AnimatedSprite2D" parent="."]
 position = Vector2(1031, 55)
 scale = Vector2(0.215021, 0.224708)
 sprite_frames = SubResource("SpriteFrames_1g2yp")
+
+[node name="handGun" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(356, 529)
+scale = Vector2(0.638889, 0.731945)
+sprite_frames = SubResource("SpriteFrames_bp05x")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="handGun"]
+offset_left = 92.0
+offset_right = 717.0
+offset_bottom = 107.0
+theme_override_fonts/normal_font = ExtResource("64_d8a27")
+theme_override_font_sizes/normal_font_size = 54
+text = "Click 	  to shoot"
+
+[node name="Sprite2D" type="Sprite2D" parent="handGun"]
+position = Vector2(339.652, 47.8178)
+scale = Vector2(0.49473, 0.460524)
+texture = ExtResource("65_a3gg3")
+
+[node name="clikBlind" type="Node2D" parent="."]
+visible = false
+position = Vector2(415, 565)
+scale = Vector2(0.9, 1.1)
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="clikBlind"]
+offset_left = -113.333
+offset_top = 19.0909
+offset_right = 586.667
+offset_bottom = 102.091
+theme_override_fonts/normal_font = ExtResource("64_d8a27")
+theme_override_font_sizes/normal_font_size = 36
+text = "Click 	  to close blinds"
+
+[node name="Sprite2D2" type="Sprite2D" parent="clikBlind"]
+position = Vector2(54.4445, 42.7273)
+scale = Vector2(0.309929, 0.262453)
+texture = ExtResource("66_f0sie")
 
 [node name="hand1" type="AnimatedSprite2D" parent="."]
 position = Vector2(811, 504)
@@ -1159,9 +1230,9 @@ flip_h = true
 
 [node name="kid gun" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(585.006, 326.013)
-scale = Vector2(0.876683, 0.840323)
-texture = ExtResource("60_1g2yp")
+position = Vector2(579.5, 332)
+scale = Vector2(0.604688, 0.612963)
+texture = ExtResource("64_v8ppe")
 
 [connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="scroll/FlowContainer/dog/Button2" to="." method="_on_button_2_pressed"]
