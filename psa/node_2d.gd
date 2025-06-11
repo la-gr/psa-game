@@ -74,13 +74,10 @@ func gun() -> void:
 	var baby = get_node("kid gun")
 	baby.set_visible(true)
 	await get_tree().create_timer(3).timeout #waits
-	#take gun sound
-	await get_tree().create_timer(1).timeout #waits
 	#have gun in left hand
 	var hand2 = get_node("hand2")
 	hand2.set_visible(false)
-	#press A to shoot, text
-	var gunText = get_node("clikGun")
+	var gunText = get_node("handGun") #press A to shoot, text
 	gunText.set_visible(true)
 	gn = true
 	baby.set_visible(false)
