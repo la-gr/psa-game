@@ -1235,6 +1235,26 @@ position = Vector2(579.5, 332)
 scale = Vector2(0.604688, 0.612963)
 texture = ExtResource("64_v8ppe")
 
+[node name="GOAL" type="RichTextLabel" parent="."]
+offset_left = 14.0
+offset_top = 7.0
+offset_right = 647.0
+offset_bottom = 120.0
+theme_override_colors/default_color = Color(0.923908, 1, 0.740086, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/shadow_offset_x = -3
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 23
+text = "GOAL: Buy everything from the Black Market"
+
+[node name="Timer22" type="Timer" parent="GOAL"]
+wait_time = 40.0
+one_shot = true
+autostart = true
+
 [node name="Node2D" parent="." instance=ExtResource("70_0byiq")]
 
 [connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
@@ -1259,3 +1279,4 @@ texture = ExtResource("64_v8ppe")
 [connection signal="pressed" from="popup trap/confirm usage" to="." method="_on_close_popup_pressed"]
 [connection signal="pressed" from="popup trap/close popup" to="." method="_on_close_popup_pressed"]
 [connection signal="timeout" from="popup trap/popup timer" to="." method="_on_popup_timer_timeout"]
+[connection signal="timeout" from="GOAL/Timer22" to="." method="_on_timer_22_timeout"]
