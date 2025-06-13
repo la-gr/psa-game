@@ -15,7 +15,7 @@ func _ready() -> void:
 	baby.set_visible(false)
 	var crack = get_node("crack")
 	crack.set_visible(false)
-	var gunText = get_node("clikGun")
+	var gunText = get_node("handGun")
 	gunText.set_visible(false)
 	var popupAd = get_node("popup ad")
 	popupAd.set_visible(false)

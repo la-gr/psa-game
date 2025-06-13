@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=86 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -69,6 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://beo6muj32u4vh" path="res://images_game/babyWgun.png" id="64_v8ppe"]
 [ext_resource type="Texture2D" uid="uid://bdosvbuehnjwj" path="res://images_game/aKEY.png" id="65_a3gg3"]
 [ext_resource type="Texture2D" uid="uid://cj0i1c4m5mueu" path="res://images_game/bKEY.png" id="66_f0sie"]
+[ext_resource type="PackedScene" uid="uid://bmo0s3o0a7twk" path="res://cutscenes.tscn" id="70_0byiq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
 animations = [{
@@ -1233,6 +1234,8 @@ visible = false
 position = Vector2(579.5, 332)
 scale = Vector2(0.604688, 0.612963)
 texture = ExtResource("64_v8ppe")
+
+[node name="Node2D" parent="." instance=ExtResource("70_0byiq")]
 
 [connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="scroll/FlowContainer/dog/Button2" to="." method="_on_button_2_pressed"]
