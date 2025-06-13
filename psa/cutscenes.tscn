@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmo0s3o0a7twk"]
+
+[ext_resource type="VideoStream" uid="uid://c3fu6dfgdhd7s" path="res://images_game/blackmarketvideo2.ogv" id="1_ao1cf"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BlackMarket" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(800, 300)
+offset_right = 1153.0
+offset_bottom = 650.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+stream = ExtResource("1_ao1cf")
+autoplay = true
+expand = true

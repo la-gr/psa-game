@@ -182,4 +182,3 @@ func _on_close_trap_popup_pressed() -> void:
 func _on_popup_trap_timer_timeout() -> void:
 	var popupTrap = get_node("popup trap")
 	popupTrap.set_visible(true)
-
