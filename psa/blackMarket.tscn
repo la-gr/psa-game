@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=110 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -85,6 +85,7 @@
 [ext_resource type="Texture2D" uid="uid://beo6muj32u4vh" path="res://images_game/babyWgun.png" id="64_v8ppe"]
 [ext_resource type="Texture2D" uid="uid://bdosvbuehnjwj" path="res://images_game/aKEY.png" id="65_a3gg3"]
 [ext_resource type="Texture2D" uid="uid://cj0i1c4m5mueu" path="res://images_game/bKEY.png" id="66_f0sie"]
+[ext_resource type="Texture2D" uid="uid://bro757wy53yo0" path="res://images_game/freeipone.png" id="67_t7o3g"]
 [ext_resource type="PackedScene" uid="uid://bmo0s3o0a7twk" path="res://cutscenes.tscn" id="70_0byiq"]
 [ext_resource type="Texture2D" uid="uid://c87j4bdgbfnpb" path="res://images_game/packages.png" id="85_uu14x"]
 [ext_resource type="Texture2D" uid="uid://biatp1yt0dtig" path="res://images_game/ipadTake.png" id="86_scw4r"]
@@ -237,6 +238,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("60_nwllg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_t7o3g")
 }],
 "loop": true,
 "name": &"default",
