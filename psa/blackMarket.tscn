@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=106 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://doop240lqe845" path="res://images_game/button.mp3" id="2_u07l3"]
 [ext_resource type="Texture2D" uid="uid://608uv7gpkc7j" path="res://images_game/hand1.png" id="2_wvdav"]
 [ext_resource type="AudioStream" uid="uid://d4lpcohx8mqob" path="res://images_game/gun shot.mp3" id="3_0bn5j"]
+[ext_resource type="AudioStream" uid="uid://l7msf25kggfe" path="res://images_game/havegun.mp3" id="3_37qri"]
 [ext_resource type="Script" uid="uid://cuwsva3g86idn" path="res://Screen.gd" id="3_100w2"]
 [ext_resource type="AudioStream" uid="uid://c57lbuagvc058" path="res://images_game/pop up.mp3" id="3_lkwpb"]
 [ext_resource type="Texture2D" uid="uid://bbyn75rw8pof" path="res://images_game/hand2.png" id="4_4rg1m"]
@@ -78,11 +79,16 @@
 [ext_resource type="Texture2D" uid="uid://dvxdn13cf3y3b" path="res://ads/are you using the black market.png" id="63_nwllg"]
 [ext_resource type="Texture2D" uid="uid://bu3gvkf14axkr" path="res://ads/puzzle.png" id="63_sut60"]
 [ext_resource type="FontFile" uid="uid://dp1lmircrjetl" path="res://images_game/Space_Mono/SpaceMono-Regular.ttf" id="64_d8a27"]
-[ext_resource type="Script" uid="uid://bnmgc8mtx7d8l" path="res://puzzle_slider.gd" id="64_nwllg"]
+[ext_resource type="Script" path="res://puzzle_slider.gd" id="64_nwllg"]
 [ext_resource type="Texture2D" uid="uid://beo6muj32u4vh" path="res://images_game/babyWgun.png" id="64_v8ppe"]
 [ext_resource type="Texture2D" uid="uid://bdosvbuehnjwj" path="res://images_game/aKEY.png" id="65_a3gg3"]
 [ext_resource type="Texture2D" uid="uid://cj0i1c4m5mueu" path="res://images_game/bKEY.png" id="66_f0sie"]
-[ext_resource type="PackedScene" uid="uid://d4bmgukaukuyh" path="res://cutscenes.tscn" id="70_0byiq"]
+[ext_resource type="PackedScene" uid="uid://bmo0s3o0a7twk" path="res://cutscenes.tscn" id="70_0byiq"]
+[ext_resource type="Texture2D" uid="uid://c87j4bdgbfnpb" path="res://images_game/packages.png" id="85_uu14x"]
+[ext_resource type="Texture2D" uid="uid://biatp1yt0dtig" path="res://images_game/ipadTake.png" id="86_scw4r"]
+[ext_resource type="Texture2D" uid="uid://ccytif14jted3" path="res://images_game/goToJail.png" id="87_1kdt3"]
+[ext_resource type="AudioStream" uid="uid://2r35ugvjtrnq" path="res://images_game/policecatch.mp3" id="88_t7o3g"]
+[ext_resource type="AudioStream" uid="uid://dna5rwi2plmhh" path="res://images_game/momcatch.mp3" id="89_eiehd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
 animations = [{
@@ -323,12 +329,32 @@ animations = [{
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a3gg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_uu14x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_scw4r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_1kdt3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="black market" type="Node2D"]
 script = ExtResource("1_tmppq")
 
 [node name="lose heart" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_dhh2v")
+
+[node name="haveaGun" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(578.511, 322.6)
+scale = Vector2(0.600741, 0.600741)
+stream = ExtResource("3_37qri")
 
 [node name="button click" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(578.511, 322.6)
@@ -1309,8 +1335,28 @@ autostart = true
 [node name="Node2D" parent="." instance=ExtResource("70_0byiq")]
 
 [node name="ENDINGS" type="AnimatedSprite2D" parent="."]
-visible = false
+position = Vector2(580, 326.5)
+scale = Vector2(0.605208, 0.608333)
 sprite_frames = SubResource("SpriteFrames_a3gg3")
+
+[node name="packages" type="AudioStreamPlayer2D" parent="ENDINGS"]
+
+[node name="police" type="AudioStreamPlayer2D" parent="ENDINGS"]
+stream = ExtResource("88_t7o3g")
+
+[node name="momcatch" type="AudioStreamPlayer2D" parent="ENDINGS"]
+stream = ExtResource("89_eiehd")
+
+[node name="endText" type="RichTextLabel" parent="ENDINGS"]
+offset_left = -899.0
+offset_top = -501.0
+offset_right = 937.0
+offset_bottom = -233.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 13
+theme_override_fonts/normal_font = ExtResource("7_mgp33")
+theme_override_font_sizes/normal_font_size = 44
+text = "YOU GOT CAUGHT ON THE BLACK MARKET"
 
 [connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="scroll/FlowContainer/dog/Button2" to="." method="_on_button_2_pressed"]

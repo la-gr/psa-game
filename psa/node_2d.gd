@@ -7,6 +7,7 @@ var hand1
 var gn = false
 var bn = false
 var baby = false
+var itemsBought = 0
 var items = ["Cyber", "dog", "flour", "Cat", "House", "Couch", 'Tree', "foot", "worm", "shoe", "worm2", "man", "Baby pic", "Phone", "cheese", "baby"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
@@ -66,7 +67,7 @@ func _input(event):
 			handGun.set_frame(1)
 			await get_tree().create_timer(0.7).timeout #waits
 			handGun.set_frame(0)
-			life_lost()
+			life_lost(1)
 		if (event.keycode == KEY_B) and (bn == true):
 			#play sound of opneing blinds
 			await get_tree().create_timer(1.5).timeout #wait that many seconds
@@ -107,17 +108,33 @@ func blinds() -> void:
 	clikBlind.set_visible(true)
 	bn = true
 
-func life_lost() -> void:
+func life_lost(way) -> void:
 	var lives = get_node("lives")
 	var o = lives.get_frame()
 	var loseHeart = get_node("lose heart")
-	print(o)
+	var endings = get_node("ENDINGS")
+	var endText = get_node("ENDINGS/endText")
 	if (o!=3):
 		loseHeart.play()
 		lives.set_frame(o+1)
-		print(o)
 	else:
-		pass #end game
+		endings.set_frame(way)
+		if (way == 1):
+			var have = get_node("haveaGun")
+			var catch = get_node("ENDINGS/momcatch")
+			have.play()
+			await get_tree().create_timer(2).timeout #waits
+			endText.text = "Your mom catches you on the Black Market. You will NEVER see an IPad again..."
+			endings.set_visible(true)
+			catch.play()
+			await get_tree().create_timer(5).timeout #waits
+		elif (way == 2):
+			var poli = get_node("ENDINGS/police")
+			endText.text = "The police catch you on the Black Market. You are arrested, and sent to jail for 10 years..."
+			endings.set_visible(true)
+			await get_tree().create_timer(7).timeout #waits
+		get_tree().change_scene_to_file("res://mainscreen.tscn") 
+
 		
 func but_click(n) -> void:
 	var clik = get_node("button click")
@@ -136,6 +153,12 @@ func _on_pop_but_pressed() -> void:
 	await get_tree().create_timer(0.7).timeout
 	group.set_visible(false)
 	pop_up.set_visible(false)
+	itemsBought += 1
+	if (itemsBought == 16):
+		var endings = get_node("ENDINGS")
+		var endText = get_node("ENDINGS/endText")
+		endings.set_frame(0)
+		endText.text = 
 	if (baby):
 		gun()
 		baby = false
@@ -197,7 +220,7 @@ func _on_confirm_usage_pressed() -> void:
 	buttonClick.play()
 	var popupTrap = get_node("popup trap")
 	popupTrap.set_visible(false)
-	life_lost()
+	life_lost(2)
 
 
 func _on_popup_trap_timer_timeout() -> void:
