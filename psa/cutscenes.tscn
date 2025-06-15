@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmo0s3o0a7twk"]
+[gd_scene load_steps=4 format=3 uid="uid://d4bmgukaukuyh"]
 
 [ext_resource type="Script" uid="uid://bviavnhhw3yv" path="res://cutscene.gd" id="1_3mh18"]
-[ext_resource type="VideoStream" uid="uid://c3fu6dfgdhd7s" path="res://images_game/blackmarketvideo2.ogv" id="1_ao1cf"]
+[ext_resource type="VideoStream" path="res://images_game/blackmarketvideo2.ogv" id="1_ao1cf"]
 [ext_resource type="AudioStream" uid="uid://cre377ivgjqsl" path="res://images_game/vaccuuming.mp3" id="3_nnxko"]
 
 [node name="Node2D" type="Node2D"]

@@ -2,6 +2,7 @@ extends Node2D
 #black market
 var tween
 var num = 1
+var popupNum = 0
 var hand1
 var gn = false
 var bn = false
@@ -28,7 +29,9 @@ func _ready() -> void:
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta) -> void:
-	pass
+	if popupNum==5:
+		blinds()
+		popupNum = 0
 	
 	
 func _input(event):
@@ -184,6 +187,7 @@ func _on_popup_timer_timeout() -> void:
 	popupSound.play()
 	var popupAd = get_node("popup ad")
 	popupAd.set_visible(true)
+	popupNum = popupNum+1
 
 
 func _on_confirm_usage_pressed() -> void:
@@ -209,6 +213,8 @@ func _on_close_trap_popup_pressed() -> void:
 
 
 func _on_gotcha_timer_timeout() -> void:
+	var popupSound = get_node("popup sound")
+	popupSound.play()
 	var gotcha = get_node("gotcha")
 	gotcha.set_visible(true)
 

@@ -2,7 +2,7 @@ extends HSlider  # Attach this script to the slider
 
 @onready var puzzle = $"puzzle piece"  # Assuming it's a child
 var targetX = 80
-var buffer = 5.0
+var buffer = 10.0
 
 func _ready() -> void:
 	connect("value_changed", Callable(self, "_on_value_changed"))
@@ -20,3 +20,4 @@ func _on_mouse_exited() -> void:
 	if current_value >= targetX-buffer && current_value <= targetX+buffer :
 		print("Puzzle piece is at the target!")
 		get_parent().visible = false
+		value = 0

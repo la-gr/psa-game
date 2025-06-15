@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=99 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -81,7 +81,7 @@
 [ext_resource type="Texture2D" uid="uid://beo6muj32u4vh" path="res://images_game/babyWgun.png" id="64_v8ppe"]
 [ext_resource type="Texture2D" uid="uid://bdosvbuehnjwj" path="res://images_game/aKEY.png" id="65_a3gg3"]
 [ext_resource type="Texture2D" uid="uid://cj0i1c4m5mueu" path="res://images_game/bKEY.png" id="66_f0sie"]
-[ext_resource type="PackedScene" uid="uid://bmo0s3o0a7twk" path="res://cutscenes.tscn" id="70_0byiq"]
+[ext_resource type="PackedScene" uid="uid://d4bmgukaukuyh" path="res://cutscenes.tscn" id="70_0byiq"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
 animations = [{
@@ -1153,7 +1153,6 @@ text = "X"
 
 [node name="popup timer" type="Timer" parent="popup ad"]
 wait_time = 8.0
-autostart = true
 
 [node name="popup trap" type="AnimatedSprite2D" parent="."]
 visible = false
@@ -1185,7 +1184,6 @@ text = "no"
 
 [node name="popup trap timer" type="Timer" parent="popup trap"]
 wait_time = 25.0
-autostart = true
 
 [node name="gotcha" type="Sprite2D" parent="."]
 visible = false
@@ -1205,9 +1203,7 @@ position = Vector2(-2.17811, -115.862)
 texture = ExtResource("63_sut60")
 
 [node name="gotcha timer" type="Timer" parent="gotcha"]
-wait_time = 31.0
-one_shot = true
-autostart = true
+wait_time = 30.0
 
 [node name="crack" type="Sprite2D" parent="."]
 visible = false
