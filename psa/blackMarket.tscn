@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=96 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://608uv7gpkc7j" path="res://images_game/hand1.png" id="2_wvdav"]
 [ext_resource type="AudioStream" uid="uid://d4lpcohx8mqob" path="res://images_game/gun shot.mp3" id="3_0bn5j"]
 [ext_resource type="Script" uid="uid://cuwsva3g86idn" path="res://Screen.gd" id="3_100w2"]
+[ext_resource type="AudioStream" uid="uid://c57lbuagvc058" path="res://images_game/pop up.mp3" id="3_lkwpb"]
 [ext_resource type="Texture2D" uid="uid://bbyn75rw8pof" path="res://images_game/hand2.png" id="4_4rg1m"]
 [ext_resource type="Texture2D" uid="uid://dj77txdnq5ynh" path="res://images_game/cybertruck.png" id="4_hut4a"]
 [ext_resource type="Texture2D" uid="uid://d1wkgpundc2eb" path="res://images_game/items/IMG_7424.jpg" id="5_cc6fy"]
@@ -58,14 +59,24 @@
 [ext_resource type="Texture2D" uid="uid://dnwgx0j4uws1r" path="res://images_game/items/titles/babydesc.png" id="50_v8ppe"]
 [ext_resource type="Texture2D" uid="uid://7o5dwgo8kylx" path="res://images_game/screescrak.png" id="54_1g2yp"]
 [ext_resource type="Texture2D" uid="uid://bill0osuamp4r" path="res://images_game/hearts-removebg-preview.png" id="54_xxd4g"]
+[ext_resource type="Texture2D" uid="uid://cnhknssaqxj7b" path="res://ads/bank ad.png" id="55_o2drq"]
 [ext_resource type="Texture2D" uid="uid://b5dobxhsl0ctc" path="res://images_game/hearts2-removebg-preview.png" id="55_u07l3"]
 [ext_resource type="Texture2D" uid="uid://do71271txjldp" path="res://images_game/black.png" id="56_0byiq"]
 [ext_resource type="Texture2D" uid="uid://eqs6mdfauwd8" path="res://images_game/hearts3-removebg-preview.png" id="56_7e23c"]
+[ext_resource type="Texture2D" uid="uid://cibjjw332yxo6" path="res://ads/cereal ad.png" id="56_lkwpb"]
 [ext_resource type="Texture2D" uid="uid://b88w0sk7nbpyg" path="res://images_game/hearts4-removebg-preview.png" id="57_0bn5j"]
+[ext_resource type="Texture2D" uid="uid://dspdy1fa04bmv" path="res://ads/energydrink ad.png" id="57_ifnxx"]
+[ext_resource type="Texture2D" uid="uid://3a4ls7l7w5lj" path="res://ads/phone ad.png" id="58_4o10d"]
+[ext_resource type="Texture2D" uid="uid://bcycv5ftgtsms" path="res://ads/truck ad.png" id="59_sut60"]
 [ext_resource type="Texture2D" uid="uid://yvhpfl1sbli3" path="res://images_game/handGunidle.png" id="59_v8ppe"]
 [ext_resource type="Texture2D" uid="uid://chxiu8dhf6f4b" path="res://images_game/handGunready.png" id="60_3jr4o"]
+[ext_resource type="Texture2D" uid="uid://c42kt1vbgoe3d" path="res://ads/vitamins ad.png" id="60_nwllg"]
 [ext_resource type="Texture2D" uid="uid://ci3xtc6g6ek24" path="res://images_game/handGunshoot.png" id="61_yjxue"]
+[ext_resource type="Texture2D" uid="uid://ccojrjv558p4m" path="res://ads/puzzle slider.png" id="62_4o10d"]
+[ext_resource type="Texture2D" uid="uid://dvxdn13cf3y3b" path="res://ads/are you using the black market.png" id="63_nwllg"]
+[ext_resource type="Texture2D" uid="uid://bu3gvkf14axkr" path="res://ads/puzzle.png" id="63_sut60"]
 [ext_resource type="FontFile" uid="uid://dp1lmircrjetl" path="res://images_game/Space_Mono/SpaceMono-Regular.ttf" id="64_d8a27"]
+[ext_resource type="Script" uid="uid://bnmgc8mtx7d8l" path="res://puzzle_slider.gd" id="64_nwllg"]
 [ext_resource type="Texture2D" uid="uid://beo6muj32u4vh" path="res://images_game/babyWgun.png" id="64_v8ppe"]
 [ext_resource type="Texture2D" uid="uid://bdosvbuehnjwj" path="res://images_game/aKEY.png" id="65_a3gg3"]
 [ext_resource type="Texture2D" uid="uid://cj0i1c4m5mueu" path="res://images_game/bKEY.png" id="66_f0sie"]
@@ -198,22 +209,22 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("55_o2drq")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("56_lkwpb")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("57_ifnxx")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("58_4o10d")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("59_sut60")
 }, {
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("60_nwllg")
 }],
 "loop": true,
 "name": &"default",
@@ -224,7 +235,7 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": null
+"texture": ExtResource("63_nwllg")
 }],
 "loop": true,
 "name": &"default",
@@ -315,6 +326,9 @@ script = ExtResource("1_tmppq")
 position = Vector2(578.511, 322.6)
 scale = Vector2(0.600741, 0.600741)
 stream = ExtResource("2_u07l3")
+
+[node name="popup sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_lkwpb")
 
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0bn5j")
@@ -1113,6 +1127,13 @@ position = Vector2(570, 276)
 scale = Vector2(0.465573, 0.453125)
 sprite_frames = SubResource("SpriteFrames_f0sie")
 
+[node name="LinkButton" type="LinkButton" parent="popup ad"]
+offset_left = -374.0
+offset_top = -470.0
+offset_right = 376.0
+offset_bottom = 466.0
+uri = "https://pranx.com/fake-virus/"
+
 [node name="close popup" type="Button" parent="popup ad"]
 offset_left = 326.0
 offset_top = -466.0
@@ -1122,7 +1143,7 @@ theme_override_font_sizes/font_size = 40
 text = "X"
 
 [node name="popup timer" type="Timer" parent="popup ad"]
-wait_time = 20.0
+wait_time = 8.0
 autostart = true
 
 [node name="popup trap" type="AnimatedSprite2D" parent="."]
@@ -1154,7 +1175,29 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_f0sie")
 text = "no"
 
 [node name="popup trap timer" type="Timer" parent="popup trap"]
-wait_time = 22.0
+wait_time = 25.0
+autostart = true
+
+[node name="gotcha" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(575, 296)
+scale = Vector2(1.1059, 0.919642)
+texture = ExtResource("62_4o10d")
+
+[node name="puzzle slider" type="HSlider" parent="gotcha"]
+offset_left = -136.404
+offset_top = 101.058
+offset_right = 145.596
+offset_bottom = 133.058
+script = ExtResource("64_nwllg")
+
+[node name="puzzle piece" type="Sprite2D" parent="gotcha/puzzle slider"]
+position = Vector2(-2.17811, -115.862)
+texture = ExtResource("63_sut60")
+
+[node name="gotcha timer" type="Timer" parent="gotcha"]
+wait_time = 31.0
+one_shot = true
 autostart = true
 
 [node name="crack" type="Sprite2D" parent="."]
@@ -1256,3 +1299,6 @@ texture = ExtResource("64_v8ppe")
 [connection signal="pressed" from="popup trap/confirm usage" to="." method="_on_confirm_usage_pressed"]
 [connection signal="pressed" from="popup trap/close trap popup" to="." method="_on_close_trap_popup_pressed"]
 [connection signal="timeout" from="popup trap/popup trap timer" to="." method="_on_popup_trap_timer_timeout"]
+[connection signal="mouse_exited" from="gotcha/puzzle slider" to="gotcha/puzzle slider" method="_on_mouse_exited"]
+[connection signal="value_changed" from="gotcha/puzzle slider" to="gotcha/puzzle slider" method="_on_value_changed"]
+[connection signal="timeout" from="gotcha/gotcha timer" to="." method="_on_gotcha_timer_timeout"]

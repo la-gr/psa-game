@@ -15,12 +15,14 @@ func _ready() -> void:
 	baby.set_visible(false)
 	var crack = get_node("crack")
 	crack.set_visible(false)
-	var gunText = get_node("clikGun")
+	var gunText = get_node("handGun")
 	gunText.set_visible(false)
 	var popupAd = get_node("popup ad")
 	popupAd.set_visible(false)
 	var popupTrap = get_node("popup trap")
 	popupTrap.set_visible(false)
+	var gotcha = get_node("gotcha")
+	gotcha.set_visible(false)
 
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -99,19 +101,6 @@ func blinds() -> void:
 	clikBlind.set_visible(true)
 	bn = true
 
-func blinds() -> void:
-	#make screen dark and everthing else light
-	var white = get_node("white")
-	var black = get_node("black")
-	white.set_visible(true)
-	black.set_visible(true)
-	#put voice note of mom
-	#wait that amount of seconds
-	#show text to click B to close blinds
-	var clikBlind = get_node("clikBlind")
-	clikBlind.set_visible(true)
-	bn = true
-
 func life_lost() -> void:
 	var lives = get_node("lives")
 	var o = lives.get_frame()
@@ -173,27 +162,43 @@ func _on_button_16_pressed() -> void:
 	but_click(15)
 
 func _on_close_popup_pressed() -> void:
+	var buttonClick = get_node("button click")
+	buttonClick.play()
 	var popupAd = get_node("popup ad")
 	popupAd.set_visible(false)
+	#cycle through the ads
 	popupAd.frame = (popupAd.frame + 1) % popupAd.sprite_frames.get_frame_count(popupAd.animation)
-	
 
 
 func _on_popup_timer_timeout() -> void:
+	var popupSound = get_node("popup sound")
+	popupSound.play()
 	var popupAd = get_node("popup ad")
 	popupAd.set_visible(true)
 
 
 func _on_confirm_usage_pressed() -> void:
-	pass # Replace with function body.
+	var buttonClick = get_node("button click")
+	buttonClick.play()
+	var popupTrap = get_node("popup trap")
+	popupTrap.set_visible(false)
+	life_lost()
+
+
+func _on_popup_trap_timer_timeout() -> void:
+	var popupSound = get_node("popup sound")
+	popupSound.play()
+	var popupTrap = get_node("popup trap")
+	popupTrap.set_visible(true)
 
 
 func _on_close_trap_popup_pressed() -> void:
+	var buttonClick = get_node("button click")
+	buttonClick.play()
 	var popupTrap = get_node("popup trap")
 	popupTrap.set_visible(false)
 
 
-func _on_popup_trap_timer_timeout() -> void:
-	var popupTrap = get_node("popup trap")
-	popupTrap.set_visible(true)
-
+func _on_gotcha_timer_timeout() -> void:
+	var gotcha = get_node("gotcha")
+	gotcha.set_visible(true)

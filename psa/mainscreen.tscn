@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://b4yu7y18rbfh3"]
+[gd_scene load_steps=26 format=3 uid="uid://b4yu7y18rbfh3"]
 
 [ext_resource type="Script" uid="uid://c68v1lnqu8pe1" path="res://mainscreen.gd" id="1_kvqn4"]
 [ext_resource type="Texture2D" uid="uid://c4xlyp8r8ysri" path="res://icons/mainscreen bg.png" id="2_vlbu8"]
+[ext_resource type="Texture2D" uid="uid://bylqs6hfcu64h" path="res://ads/hippocampus.png" id="3_skk76"]
 [ext_resource type="FontFile" uid="uid://crwdijpw1lqcy" path="res://fonts/Cabin_Sketch/CabinSketch-Regular.ttf" id="3_vlbu8"]
 [ext_resource type="Texture2D" uid="uid://5cggguqd211d" path="res://icons/play.png" id="4_vlbu8"]
 [ext_resource type="Texture2D" uid="uid://dysbfae6hfxud" path="res://icons/options.png" id="5_0iccn"]
@@ -17,6 +18,8 @@
 [ext_resource type="Texture2D" uid="uid://cu2n5jrdxognj" path="res://icons/backarrow_hover.png" id="11_d4d15"]
 [ext_resource type="Texture2D" uid="uid://bxve0vdexw34p" path="res://icons/forwardbutton.png" id="12_6nwgw"]
 [ext_resource type="Texture2D" uid="uid://d3rcyahb2ft1b" path="res://icons/forwardbutton_hover.png" id="13_skk76"]
+[ext_resource type="Texture2D" uid="uid://cpcw5pcyog06a" path="res://icons/ad1_2.png" id="18_bsvbd"]
+[ext_resource type="Texture2D" uid="uid://c7c7su4yghtn4" path="res://icons/ad2_2.png" id="20_ty5qp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akw4d"]
 texture = ExtResource("8_54ydl")
@@ -34,11 +37,25 @@ animations = [{
 "texture": ExtResource("7_4ydbd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_vue7p")
+"texture": ExtResource("18_bsvbd")
 }],
 "loop": true,
 "name": &"default",
 "speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_s0e00"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_vue7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ty5qp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
 }]
 
 [node name="Node2D" type="Node2D"]
@@ -50,12 +67,22 @@ position = Vector2(572, 323)
 scale = Vector2(0.86, 0.86)
 texture = ExtResource("2_vlbu8")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 260.0
+offset_top = 29.0
+offset_right = 893.0
+offset_bottom = 277.0
+size_flags_vertical = 3
+texture = ExtResource("3_skk76")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="mainscreen" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(600, 500)
-offset_left = 280.0
-offset_top = 29.0
-offset_right = 880.0
-offset_bottom = 621.0
+offset_left = 260.0
+offset_top = 30.0
+offset_right = 860.0
+offset_bottom = 618.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
@@ -67,11 +94,14 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -46
 theme_override_fonts/normal_font = ExtResource("3_vlbu8")
 theme_override_font_sizes/normal_font_size = 130
-text = "GAME TITLE"
 scroll_active = false
 horizontal_alignment = 1
 
-[node name="Play" type="Button" parent="mainscreen"]
+[node name="MarginContainer" type="MarginContainer" parent="mainscreen"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Play" type="Button" parent="mainscreen/MarginContainer"]
 custom_minimum_size = Vector2(0, 170)
 layout_mode = 2
 size_flags_vertical = 3
@@ -80,15 +110,11 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="MarginContainer" type="MarginContainer" parent="mainscreen"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 16
-
-[node name="HBoxContainer" type="HBoxContainer" parent="mainscreen/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="mainscreen"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 
-[node name="Options" type="Button" parent="mainscreen/MarginContainer/HBoxContainer"]
+[node name="Options" type="Button" parent="mainscreen/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -97,7 +123,7 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Help" type="Button" parent="mainscreen/MarginContainer/HBoxContainer"]
+[node name="Help" type="Button" parent="mainscreen/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -106,7 +132,11 @@ flat = true
 icon_alignment = 1
 expand_icon = true
 
-[node name="Exit" type="Button" parent="mainscreen"]
+[node name="MarginContainer2" type="MarginContainer" parent="mainscreen"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Exit" type="Button" parent="mainscreen/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 icon = ExtResource("7_54ydl")
@@ -394,18 +424,32 @@ stretch_mode = 5
 position = Vector2(137.125, 324.703)
 scale = Vector2(0.902219, 1.15576)
 sprite_frames = SubResource("SpriteFrames_n4ag8")
+frame_progress = 0.842087
+
+[node name="LinkButton" type="LinkButton" parent="Ad1"]
+offset_left = -123.0
+offset_top = -258.0
+offset_right = 126.0
+offset_bottom = 256.0
+uri = "https://www.petvalu.ca/product/performatrin-prime-sensitive-skin-stomach-salmon-oatmeal-formula-adult-dog-food/FCM06798"
 
 [node name="Ad2" type="AnimatedSprite2D" parent="."]
 position = Vector2(1015.5, 324.75)
 scale = Vector2(0.570332, 0.94952)
-sprite_frames = SubResource("SpriteFrames_n4ag8")
-frame = 1
-frame_progress = 0.545454
+sprite_frames = SubResource("SpriteFrames_s0e00")
+frame_progress = 0.0229825
 
-[connection signal="pressed" from="mainscreen/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="mainscreen/MarginContainer/HBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="mainscreen/MarginContainer/HBoxContainer/Help" to="." method="_on_help_pressed"]
-[connection signal="pressed" from="mainscreen/Exit" to="." method="_on_exit_pressed"]
+[node name="LinkButton" type="LinkButton" parent="Ad2"]
+offset_left = -199.0
+offset_top = -308.0
+offset_right = 197.0
+offset_bottom = 311.0
+uri = "https://temporary-namee.onrender.com/"
+
+[connection signal="pressed" from="mainscreen/MarginContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="mainscreen/HBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="mainscreen/HBoxContainer/Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="mainscreen/MarginContainer2/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Level Select/Level Select VBox/episode select/episode container/BlackMarket" to="." method="_on_black_market_pressed"]
 [connection signal="pressed" from="Level Select/Level Select VBox/back container/ExitLevels" to="." method="_on_exit_levels_pressed"]
 [connection signal="mouse_exited" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/MasterVolume VBox/MasterVolume Slider" method="_on_mouse_exited"]

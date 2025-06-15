@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c57lbuagvc058"
+path="res://.godot/imported/pop up.mp3-d11fd332d5b02aded02d1dd260f838d9.mp3str"
+
+[deps]
+
+source_file="res://images_game/pop up.mp3"
+dest_files=["res://.godot/imported/pop up.mp3-d11fd332d5b02aded02d1dd260f838d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
