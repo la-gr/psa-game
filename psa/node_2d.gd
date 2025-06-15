@@ -121,7 +121,7 @@ func life_lost(way) -> void:
 		lives.set_frame(o+1)
 	else:
 		var popupSound = get_node("popup sound")
-		popupSound.volume_db = -5.0
+		popupSound.volume_db = -30.0
 		loseHeart.play()
 		lives.set_frame(o+1)
 		await get_tree().create_timer(1.5).timeout #waits
@@ -135,14 +135,14 @@ func life_lost(way) -> void:
 			endings.set_visible(true)
 			await get_tree().create_timer(1).timeout #waits
 			catch.play()
-			await get_tree().create_timer(6).timeout #waits
+			await get_tree().create_timer(8).timeout #waits
 		elif (way == 2):
 			var poli = get_node("ENDINGS/police")
 			endText.text = "The police catch you on the Black Market. You are arrested, and sent to jail for 10 years..."
 			endings.set_visible(true)
 			await get_tree().create_timer(1).timeout #waits
 			poli.play()
-			await get_tree().create_timer(8).timeout #waits
+			await get_tree().create_timer(10).timeout #waits
 		get_tree().change_scene_to_file("res://mainscreen.tscn") 
 
 		
@@ -173,8 +173,10 @@ func _on_pop_but_pressed() -> void:
 		endings.set_visible(true)
 		package.play()
 		await get_tree().create_timer(7).timeout
+		endings.set_frame(1)
 		endText.text = "She takes away your IPad, and calls the police on you."
 		await get_tree().create_timer(2).timeout
+		endings.set_frame(2)
 		endText.text = "You are arrested and sent to jail for many years..."
 		await get_tree().create_timer(3).timeout
 		get_tree().change_scene_to_file("res://mainscreen.tscn")

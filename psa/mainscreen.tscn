@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bv1074abebevd"]
+[gd_scene load_steps=28 format=3 uid="uid://bv1074abebevd"]
 
 [ext_resource type="Script" uid="uid://bv2fxxhc6vu6n" path="res://mainscreen.gd" id="1_kvqn4"]
 [ext_resource type="Texture2D" uid="uid://c4xlyp8r8ysri" path="res://icons/mainscreen bg.png" id="2_vlbu8"]
@@ -20,6 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://d3rcyahb2ft1b" path="res://icons/forwardbutton_hover.png" id="13_skk76"]
 [ext_resource type="Texture2D" uid="uid://cpcw5pcyog06a" path="res://icons/ad1_2.png" id="18_bsvbd"]
 [ext_resource type="Texture2D" uid="uid://c7c7su4yghtn4" path="res://icons/ad2_2.png" id="20_ty5qp"]
+[ext_resource type="AudioStream" uid="uid://benpvp7aygcjh" path="res://images_game/homesong.mp3" id="21_bsvbd"]
+[ext_resource type="AudioStream" uid="uid://doop240lqe845" path="res://images_game/button.mp3" id="22_ty5qp"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akw4d"]
 texture = ExtResource("8_54ydl")
@@ -446,6 +448,15 @@ offset_right = 197.0
 offset_bottom = 311.0
 uri = "https://temporary-namee.onrender.com/"
 
+[node name="bgmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_bsvbd")
+volume_db = -8.0
+
+[node name="button click" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(578.511, 322.6)
+scale = Vector2(0.600741, 0.600741)
+stream = ExtResource("22_ty5qp")
+
 [connection signal="pressed" from="mainscreen/MarginContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="mainscreen/HBoxContainer/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="mainscreen/HBoxContainer/Help" to="." method="_on_help_pressed"]
@@ -462,3 +473,4 @@ uri = "https://temporary-namee.onrender.com/"
 [connection signal="value_changed" from="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" to="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox/VoiceLines Slider" method="_on_value_changed"]
 [connection signal="pressed" from="OptionsMenu/OptionsMenu VBox/back container/ExitOptions" to="." method="_on_exit_options_pressed"]
 [connection signal="pressed" from="HelpPanel/HelpVBox/back container/ExitHelp" to="." method="_on_exit_help_pressed"]
+[connection signal="finished" from="bgmusic" to="." method="_on_bgmusic_finished"]

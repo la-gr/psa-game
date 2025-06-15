@@ -10,6 +10,9 @@ func _ready():
 	var optionsMenu = get_node("OptionsMenu")
 	var helpPanel = get_node("HelpPanel")
 	
+	var song = get_node("bgmusic")
+	song.play()
+	
 	lvlSelect.set_visible(false)
 	optionsMenu.set_visible(false)
 	helpPanel.set_visible(false)
@@ -53,3 +56,13 @@ func _on_exit_options_pressed() -> void:
 func _on_exit_help_pressed() -> void:
 	var helpPanel = get_node("HelpPanel")
 	helpPanel.set_visible(false)
+
+
+func _on_bgmusic_finished() -> void:
+	var song = get_node("bgmusic")
+	song.play()
+	
+func _input(event):
+	if event is InputEventMouseButton:
+		var click = get_node("button click")
+		click.play()

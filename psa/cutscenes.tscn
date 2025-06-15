@@ -22,3 +22,4 @@ stream = ExtResource("3_nnxko")
 volume_db = 2.0
 
 [connection signal="finished" from="BlackMarket" to="." method="_on_black_market_finished"]
+[connection signal="finished" from="vaccuum" to="." method="_on_vaccuum_finished"]

@@ -1352,12 +1352,15 @@ sprite_frames = SubResource("SpriteFrames_a3gg3")
 
 [node name="packages" type="AudioStreamPlayer2D" parent="ENDINGS"]
 stream = ExtResource("88_uu14x")
+volume_db = 10.0
 
 [node name="police" type="AudioStreamPlayer2D" parent="ENDINGS"]
 stream = ExtResource("88_t7o3g")
+volume_db = 10.0
 
 [node name="momcatch" type="AudioStreamPlayer2D" parent="ENDINGS"]
 stream = ExtResource("89_eiehd")
+volume_db = 10.0
 
 [node name="endText" type="RichTextLabel" parent="ENDINGS"]
 offset_left = -899.0
