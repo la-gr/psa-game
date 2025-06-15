@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bv1074abebevd"]
+[gd_scene load_steps=35 format=3 uid="uid://bv1074abebevd"]
 
 [ext_resource type="Script" uid="uid://bv2fxxhc6vu6n" path="res://mainscreen.gd" id="1_kvqn4"]
 [ext_resource type="Texture2D" uid="uid://c4xlyp8r8ysri" path="res://icons/mainscreen bg.png" id="2_vlbu8"]
@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://crwdijpw1lqcy" path="res://fonts/Cabin_Sketch/CabinSketch-Regular.ttf" id="3_vlbu8"]
 [ext_resource type="Texture2D" uid="uid://5cggguqd211d" path="res://icons/play.png" id="4_vlbu8"]
 [ext_resource type="Texture2D" uid="uid://dysbfae6hfxud" path="res://icons/options.png" id="5_0iccn"]
-[ext_resource type="Script" path="res://volume_slider.gd" id="5_6of4a"]
+[ext_resource type="Script" uid="uid://c1txns0f6so4d" path="res://volume_slider.gd" id="5_6of4a"]
 [ext_resource type="Texture2D" uid="uid://4memuvqs1y2k" path="res://icons/help.png" id="6_sogwd"]
 [ext_resource type="Texture2D" uid="uid://k25rprw6uxyw" path="res://icons/ad1.png" id="7_4ydbd"]
 [ext_resource type="Texture2D" uid="uid://df36hgu4nm0bg" path="res://icons/exit.png" id="7_54ydl"]
@@ -17,14 +17,46 @@
 [ext_resource type="Texture2D" uid="uid://bjmn63qg2vg4q" path="res://icons/backarrow.png" id="10_dtbag"]
 [ext_resource type="Texture2D" uid="uid://cu2n5jrdxognj" path="res://icons/backarrow_hover.png" id="11_d4d15"]
 [ext_resource type="Texture2D" uid="uid://bxve0vdexw34p" path="res://icons/forwardbutton.png" id="12_6nwgw"]
+[ext_resource type="Texture2D" uid="uid://d0jqjlko4jv3i" path="res://icons/blackmarket episode.png" id="13_s0e00"]
 [ext_resource type="Texture2D" uid="uid://d3rcyahb2ft1b" path="res://icons/forwardbutton_hover.png" id="13_skk76"]
+[ext_resource type="Texture2D" uid="uid://cxxaavjxfhfuc" path="res://icons/back_hover.png" id="17_ut4vi"]
 [ext_resource type="Texture2D" uid="uid://cpcw5pcyog06a" path="res://icons/ad1_2.png" id="18_bsvbd"]
 [ext_resource type="Texture2D" uid="uid://c7c7su4yghtn4" path="res://icons/ad2_2.png" id="20_ty5qp"]
 [ext_resource type="AudioStream" uid="uid://benpvp7aygcjh" path="res://images_game/homesong.mp3" id="21_bsvbd"]
 [ext_resource type="AudioStream" uid="uid://doop240lqe845" path="res://images_game/button.mp3" id="22_ty5qp"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ut4vi"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sfb2v"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x3axq"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8yhf8"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_akw4d"]
 texture = ExtResource("8_54ydl")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_s0e00"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dtbag"]
 texture = ExtResource("8_54ydl")
@@ -107,6 +139,7 @@ size_flags_vertical = 3
 custom_minimum_size = Vector2(0, 170)
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ut4vi")
 icon = ExtResource("4_vlbu8")
 flat = true
 icon_alignment = 1
@@ -120,6 +153,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sfb2v")
 icon = ExtResource("5_0iccn")
 flat = true
 icon_alignment = 1
@@ -129,6 +163,7 @@ expand_icon = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_x3axq")
 icon = ExtResource("6_sogwd")
 flat = true
 icon_alignment = 1
@@ -141,6 +176,7 @@ size_flags_vertical = 3
 [node name="Exit" type="Button" parent="mainscreen/MarginContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_8yhf8")
 icon = ExtResource("7_54ydl")
 flat = true
 icon_alignment = 1
@@ -208,7 +244,12 @@ z_index = 3
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/hover = SubResource("StyleBoxEmpty_s0e00")
 text = "BlackMarket"
+icon = ExtResource("13_s0e00")
+flat = true
+clip_text = true
+expand_icon = true
 
 [node name="forwardbutton margin" type="MarginContainer" parent="Level Select/Level Select VBox/episode select"]
 layout_mode = 2
@@ -233,11 +274,11 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 size_flags_vertical = 3
 texture_normal = ExtResource("10_35uih")
+texture_hover = ExtResource("17_ut4vi")
 ignore_texture_size = true
 stretch_mode = 5
 
 [node name="OptionsMenu" type="Panel" parent="."]
-visible = false
 z_index = 5
 offset_left = 252.0
 offset_top = 259.0
@@ -293,6 +334,7 @@ step = 0.05
 script = ExtResource("5_6of4a")
 
 [node name="SoundEffects VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/SoundEffects VBox"]
@@ -312,6 +354,7 @@ step = 0.05
 script = ExtResource("5_6of4a")
 
 [node name="BackgroundMusic VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/BackgroundMusic VBox"]
@@ -331,6 +374,7 @@ step = 0.05
 script = ExtResource("5_6of4a")
 
 [node name="Voicelines VBox" type="VBoxContainer" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="OptionsMenu/OptionsMenu VBox/VolumeSliderMargins/Voicelines VBox"]

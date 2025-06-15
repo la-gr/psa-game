@@ -81,7 +81,7 @@
 [ext_resource type="Texture2D" uid="uid://dvxdn13cf3y3b" path="res://ads/are you using the black market.png" id="63_nwllg"]
 [ext_resource type="Texture2D" uid="uid://bu3gvkf14axkr" path="res://ads/puzzle.png" id="63_sut60"]
 [ext_resource type="FontFile" uid="uid://dp1lmircrjetl" path="res://images_game/Space_Mono/SpaceMono-Regular.ttf" id="64_d8a27"]
-[ext_resource type="Script" path="res://puzzle_slider.gd" id="64_nwllg"]
+[ext_resource type="Script" uid="uid://bnmgc8mtx7d8l" path="res://puzzle_slider.gd" id="64_nwllg"]
 [ext_resource type="Texture2D" uid="uid://beo6muj32u4vh" path="res://images_game/babyWgun.png" id="64_v8ppe"]
 [ext_resource type="Texture2D" uid="uid://bdosvbuehnjwj" path="res://images_game/aKEY.png" id="65_a3gg3"]
 [ext_resource type="Texture2D" uid="uid://cj0i1c4m5mueu" path="res://images_game/bKEY.png" id="66_f0sie"]
