@@ -103,6 +103,8 @@ func blinds() -> void:
 	white.set_visible(true)
 	black.set_visible(true)
 	var mom = get_node("blindsmom")
+	var close = get_node("closing blinds")
+	close.play()
 	mom.play()
 	await get_tree().create_timer(2).timeout
 	#show text to click B to close blinds
