@@ -5,6 +5,7 @@ var num = 1
 var hand1
 var gn = false
 var bn = false
+var baby = false
 var items = ["Cyber", "dog", "flour", "Cat", "House", "Couch", 'Tree', "foot", "worm", "shoe", "worm2", "man", "Baby pic", "Phone", "cheese", "baby"]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:	
@@ -38,6 +39,8 @@ func _input(event):
 		hand1.set_frame(1)
 		tween = create_tween()
 		tween.tween_property(hand1, "position", event.position, 0.2)
+		var touch = get_node("touch")
+		touch.play()
 		await get_tree().create_timer(0.5).timeout #waits
 		hand1.set_frame(0)
 		await get_tree().create_timer(0.2).timeout #waits
@@ -61,7 +64,7 @@ func _input(event):
 			await get_tree().create_timer(0.7).timeout #waits
 			handGun.set_frame(0)
 			life_lost()
-		if (event.keycode == KEY_A) and (bn == true):
+		if (event.keycode == KEY_B) and (bn == true):
 			#play sound of opneing blinds
 			await get_tree().create_timer(1.5).timeout #wait that many seconds
 			#set screen back to normal and get rid of the text
@@ -104,8 +107,10 @@ func blinds() -> void:
 func life_lost() -> void:
 	var lives = get_node("lives")
 	var o = lives.get_frame()
-	if (o!=0):
-		lives.set_frame(o-1)
+	print(o)
+	if (o!=3):
+		lives.set_frame(o+1)
+		print(o)
 	else:
 		pass #end game
 		
@@ -126,6 +131,9 @@ func _on_pop_but_pressed() -> void:
 	await get_tree().create_timer(0.7).timeout
 	group.set_visible(false)
 	pop_up.set_visible(false)
+	if (baby):
+		gun()
+		baby = false
 
 func _on_button_pressed() -> void:
 	but_click(0)
@@ -160,6 +168,7 @@ func _on_button_15_pressed() -> void:
 func _on_button_16_pressed() -> void:
 	gun()
 	but_click(15)
+	baby = true
 
 func _on_close_popup_pressed() -> void:
 	var buttonClick = get_node("button click")
@@ -202,3 +211,8 @@ func _on_close_trap_popup_pressed() -> void:
 func _on_gotcha_timer_timeout() -> void:
 	var gotcha = get_node("gotcha")
 	gotcha.set_visible(true)
+
+
+func _on_timer_22_timeout() -> void:
+	var goal = get_node("GOAL")
+	goal.set_visible(false)

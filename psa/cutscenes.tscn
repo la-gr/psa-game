@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmo0s3o0a7twk"]
+
+[ext_resource type="Script" uid="uid://bviavnhhw3yv" path="res://cutscene.gd" id="1_3mh18"]
+[ext_resource type="VideoStream" uid="uid://c3fu6dfgdhd7s" path="res://images_game/blackmarketvideo2.ogv" id="1_ao1cf"]
+[ext_resource type="AudioStream" uid="uid://cre377ivgjqsl" path="res://images_game/vaccuuming.mp3" id="3_nnxko"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_3mh18")
+
+[node name="BlackMarket" type="VideoStreamPlayer" parent="."]
+custom_minimum_size = Vector2(800, 300)
+offset_right = 1153.0
+offset_bottom = 650.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+stream = ExtResource("1_ao1cf")
+autoplay = true
+expand = true
+
+[node name="vaccuum" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nnxko")
+
+[connection signal="finished" from="BlackMarket" to="." method="_on_black_market_finished"]
