@@ -102,8 +102,10 @@ func blinds() -> void:
 func life_lost() -> void:
 	var lives = get_node("lives")
 	var o = lives.get_frame()
-	if (o!=0):
-		lives.set_frame(o-1)
+	print(o)
+	if (o!=3):
+		lives.set_frame(o+1)
+		print(o)
 	else:
 		pass #end game
 		
@@ -124,6 +126,7 @@ func _on_pop_but_pressed() -> void:
 	await get_tree().create_timer(0.7).timeout
 	group.set_visible(false)
 	pop_up.set_visible(false)
+	gun()
 
 func _on_button_pressed() -> void:
 	but_click(0)
