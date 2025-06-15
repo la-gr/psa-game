@@ -1,7 +1,8 @@
-[gd_scene load_steps=99 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=100 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
+[ext_resource type="AudioStream" uid="uid://bse6rkxyfx5o" path="res://images_game/lose heart.wav" id="2_dhh2v"]
 [ext_resource type="AudioStream" uid="uid://doop240lqe845" path="res://images_game/button.mp3" id="2_u07l3"]
 [ext_resource type="Texture2D" uid="uid://608uv7gpkc7j" path="res://images_game/hand1.png" id="2_wvdav"]
 [ext_resource type="AudioStream" uid="uid://d4lpcohx8mqob" path="res://images_game/gun shot.mp3" id="3_0bn5j"]
@@ -325,6 +326,9 @@ animations = [{
 
 [node name="black market" type="Node2D"]
 script = ExtResource("1_tmppq")
+
+[node name="lose heart" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_dhh2v")
 
 [node name="button click" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(578.511, 322.6)

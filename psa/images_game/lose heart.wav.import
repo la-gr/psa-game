@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bse6rkxyfx5o"
+path="res://.godot/imported/lose heart.wav-7582a0a87a76c1c852da743f4aea12af.sample"
+
+[deps]
+
+source_file="res://images_game/lose heart.wav"
+dest_files=["res://.godot/imported/lose heart.wav-7582a0a87a76c1c852da743f4aea12af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

@@ -110,8 +110,10 @@ func blinds() -> void:
 func life_lost() -> void:
 	var lives = get_node("lives")
 	var o = lives.get_frame()
+	var loseHeart = get_node("lose heart")
 	print(o)
 	if (o!=3):
+		loseHeart.play()
 		lives.set_frame(o+1)
 		print(o)
 	else:
