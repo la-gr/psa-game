@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=88 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -7,6 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://d4lpcohx8mqob" path="res://images_game/gun shot.mp3" id="3_0bn5j"]
 [ext_resource type="Script" uid="uid://cuwsva3g86idn" path="res://Screen.gd" id="3_100w2"]
 [ext_resource type="Texture2D" uid="uid://bbyn75rw8pof" path="res://images_game/hand2.png" id="4_4rg1m"]
+[ext_resource type="AudioStream" uid="uid://cj8op3f8i28rq" path="res://images_game/touch.mp3" id="4_d8a27"]
 [ext_resource type="Texture2D" uid="uid://dj77txdnq5ynh" path="res://images_game/cybertruck.png" id="4_hut4a"]
 [ext_resource type="Texture2D" uid="uid://d1wkgpundc2eb" path="res://images_game/items/IMG_7424.jpg" id="5_cc6fy"]
 [ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
@@ -309,6 +310,8 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_a3gg3"]
+
 [node name="black market" type="Node2D"]
 script = ExtResource("1_tmppq")
 
@@ -319,6 +322,11 @@ stream = ExtResource("2_u07l3")
 
 [node name="gunshot" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0bn5j")
+volume_db = 24.0
+pitch_scale = 1.65
+
+[node name="touch" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_d8a27")
 
 [node name="bg" type="Sprite2D" parent="."]
 position = Vector2(578.511, 322.6)
@@ -1256,6 +1264,10 @@ one_shot = true
 autostart = true
 
 [node name="Node2D" parent="." instance=ExtResource("70_0byiq")]
+
+[node name="ENDINGS" type="AnimatedSprite2D" parent="."]
+visible = false
+sprite_frames = SubResource("SpriteFrames_a3gg3")
 
 [connection signal="pressed" from="scroll/FlowContainer/Cyber/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="scroll/FlowContainer/dog/Button2" to="." method="_on_button_2_pressed"]
