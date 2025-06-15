@@ -156,6 +156,7 @@ func but_click(n) -> void:
 	await get_tree().create_timer(0.7).timeout #waits
 	pop_up.set_visible(true)
 	pop_up.set_frame(n)
+	itemsBought += 1
 
 func _on_pop_but_pressed() -> void:
 	var clik = get_node("button click")
@@ -165,7 +166,6 @@ func _on_pop_but_pressed() -> void:
 	await get_tree().create_timer(0.7).timeout
 	group.set_visible(false)
 	pop_up.set_visible(false)
-	itemsBought += 1
 	if (itemsBought == 16):
 		var endings = get_node("ENDINGS")
 		var endText = get_node("ENDINGS/endText")
