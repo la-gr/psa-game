@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://dha2chfbnh26k"]
+[gd_scene load_steps=109 format=3 uid="uid://dha2chfbnh26k"]
 
 [ext_resource type="Script" uid="uid://dawhmrdjvwlu" path="res://node_2d.gd" id="1_tmppq"]
 [ext_resource type="Texture2D" uid="uid://niwmgq84dy7g" path="res://images_game/ipad.png" id="2_blukf"]
@@ -15,9 +15,11 @@
 [ext_resource type="Texture2D" uid="uid://d1wkgpundc2eb" path="res://images_game/items/IMG_7424.jpg" id="5_cc6fy"]
 [ext_resource type="Texture2D" uid="uid://d3ejhhtdcy4vx" path="res://images_game/balck.png" id="5_wvdav"]
 [ext_resource type="Texture2D" uid="uid://cwebbi2isj0w3" path="res://images_game/white.png" id="5_y35sw"]
+[ext_resource type="AudioStream" uid="uid://c3ur3ftjfw2d2" path="res://images_game/closingblinds.mp3" id="7_1kdt3"]
 [ext_resource type="FontFile" uid="uid://dijudjs2awvrb" path="res://Space_Mono/SpaceMono-Bold.ttf" id="7_mgp33"]
 [ext_resource type="Texture2D" uid="uid://dc3o0hcfakak6" path="res://images_game/butReal.png" id="8_mgp33"]
 [ext_resource type="Texture2D" uid="uid://hl0g4swc5bjd" path="res://images_game/items/IMG_7425.jpg" id="8_sl02u"]
+[ext_resource type="AudioStream" uid="uid://curton1umikdb" path="res://images_game/sitinDark.mp3" id="8_t7o3g"]
 [ext_resource type="Texture2D" uid="uid://btclrqvcfi3wg" path="res://images_game/ads/Untitled_Artwork (8).png" id="9_sl02u"]
 [ext_resource type="Texture2D" uid="uid://rt6k3n70wnd7" path="res://images_game/ads/Untitled_Artwork (9).png" id="10_lap5i"]
 [ext_resource type="Texture2D" uid="uid://d3s4avlutbylb" path="res://images_game/items/IMG_7426.jpg" id="10_rq0lb"]
@@ -88,6 +90,7 @@
 [ext_resource type="Texture2D" uid="uid://biatp1yt0dtig" path="res://images_game/ipadTake.png" id="86_scw4r"]
 [ext_resource type="Texture2D" uid="uid://ccytif14jted3" path="res://images_game/goToJail.png" id="87_1kdt3"]
 [ext_resource type="AudioStream" uid="uid://2r35ugvjtrnq" path="res://images_game/policecatch.mp3" id="88_t7o3g"]
+[ext_resource type="AudioStream" uid="uid://dd71l7kcdfpet" path="res://images_game/packges.mp3" id="88_uu14x"]
 [ext_resource type="AudioStream" uid="uid://dna5rwi2plmhh" path="res://images_game/momcatch.mp3" id="89_eiehd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nqr8k"]
@@ -368,6 +371,13 @@ stream = ExtResource("3_lkwpb")
 stream = ExtResource("3_0bn5j")
 volume_db = 24.0
 pitch_scale = 1.65
+
+[node name="closing blinds" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_1kdt3")
+volume_db = 24.0
+
+[node name="blindsmom" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_t7o3g")
 
 [node name="touch" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_d8a27")
@@ -1335,11 +1345,13 @@ autostart = true
 [node name="Node2D" parent="." instance=ExtResource("70_0byiq")]
 
 [node name="ENDINGS" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(580, 326.5)
 scale = Vector2(0.605208, 0.608333)
 sprite_frames = SubResource("SpriteFrames_a3gg3")
 
 [node name="packages" type="AudioStreamPlayer2D" parent="ENDINGS"]
+stream = ExtResource("88_uu14x")
 
 [node name="police" type="AudioStreamPlayer2D" parent="ENDINGS"]
 stream = ExtResource("88_t7o3g")

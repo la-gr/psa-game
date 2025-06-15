@@ -44,7 +44,7 @@ func _input(event):
 		tween = create_tween()
 		tween.tween_property(hand1, "position", event.position, 0.2)
 		var touch = get_node("touch")
-		touch.play()
+		#touch.play()
 		await get_tree().create_timer(0.5).timeout #waits
 		hand1.set_frame(0)
 		await get_tree().create_timer(0.2).timeout #waits
@@ -69,15 +69,16 @@ func _input(event):
 			handGun.set_frame(0)
 			life_lost(1)
 		if (event.keycode == KEY_B) and (bn == true):
-			#play sound of opneing blinds
-			await get_tree().create_timer(1.5).timeout #wait that many seconds
+			var close = get_node("closing blinds")
+			close.play()
+			await get_tree().create_timer(3).timeout #wait that many seconds
 			#set screen back to normal and get rid of the text
 			var white = get_node("white")
 			var black = get_node("black")
 			white.set_visible(false)
 			black.set_visible(false)
 			var clikBlind = get_node("clikBlind") 
-			clikBlind.set_visible(true)
+			clikBlind.set_visible(false)
 			bn = false
 
 func gun() -> void:
@@ -101,8 +102,9 @@ func blinds() -> void:
 	var black = get_node("black")
 	white.set_visible(true)
 	black.set_visible(true)
-	#put voice note of mom
-	#wait that amount of seconds
+	var mom = get_node("blindsmom")
+	mom.play()
+	await get_tree().create_timer(2).timeout
 	#show text to click B to close blinds
 	var clikBlind = get_node("clikBlind") 
 	clikBlind.set_visible(true)
@@ -114,25 +116,33 @@ func life_lost(way) -> void:
 	var loseHeart = get_node("lose heart")
 	var endings = get_node("ENDINGS")
 	var endText = get_node("ENDINGS/endText")
-	if (o!=3):
+	if (o!=2):
 		loseHeart.play()
 		lives.set_frame(o+1)
 	else:
+		var popupSound = get_node("popup sound")
+		popupSound.volume_db = -5.0
+		loseHeart.play()
+		lives.set_frame(o+1)
+		await get_tree().create_timer(1.5).timeout #waits
 		endings.set_frame(way)
 		if (way == 1):
 			var have = get_node("haveaGun")
 			var catch = get_node("ENDINGS/momcatch")
 			have.play()
-			await get_tree().create_timer(2).timeout #waits
+			await get_tree().create_timer(3).timeout #waits
 			endText.text = "Your mom catches you on the Black Market. You will NEVER see an IPad again..."
 			endings.set_visible(true)
+			await get_tree().create_timer(1).timeout #waits
 			catch.play()
-			await get_tree().create_timer(5).timeout #waits
+			await get_tree().create_timer(6).timeout #waits
 		elif (way == 2):
 			var poli = get_node("ENDINGS/police")
 			endText.text = "The police catch you on the Black Market. You are arrested, and sent to jail for 10 years..."
 			endings.set_visible(true)
-			await get_tree().create_timer(7).timeout #waits
+			await get_tree().create_timer(1).timeout #waits
+			poli.play()
+			await get_tree().create_timer(8).timeout #waits
 		get_tree().change_scene_to_file("res://mainscreen.tscn") 
 
 		
@@ -157,8 +167,17 @@ func _on_pop_but_pressed() -> void:
 	if (itemsBought == 16):
 		var endings = get_node("ENDINGS")
 		var endText = get_node("ENDINGS/endText")
+		var package = get_node("ENDINGS/packages")
 		endings.set_frame(0)
-		endText.text = 
+		endText.text = "The items that you bought on the Black Market are delivered, but, your mom gets to them first."
+		endings.set_visible(true)
+		package.play()
+		await get_tree().create_timer(7).timeout
+		endText.text = "She takes away your IPad, and calls the police on you."
+		await get_tree().create_timer(2).timeout
+		endText.text = "You are arrested and sent to jail for many years..."
+		await get_tree().create_timer(3).timeout
+		get_tree().change_scene_to_file("res://mainscreen.tscn")
 	if (baby):
 		gun()
 		baby = false
@@ -194,7 +213,6 @@ func _on_button_14_pressed() -> void:
 func _on_button_15_pressed() -> void:
 	but_click(14)
 func _on_button_16_pressed() -> void:
-	gun()
 	but_click(15)
 	baby = true
 
