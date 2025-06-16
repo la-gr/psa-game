@@ -1364,7 +1364,7 @@ volume_db = 10.0
 
 [node name="momcatch" type="AudioStreamPlayer2D" parent="ENDINGS"]
 stream = ExtResource("89_eiehd")
-volume_db = 10.0
+volume_db = 5.0
 
 [node name="endText" type="RichTextLabel" parent="ENDINGS"]
 offset_left = -899.0

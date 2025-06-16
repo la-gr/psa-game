@@ -71,7 +71,7 @@ func _input(event):
 		if (event.keycode == KEY_B) and (bn == true):
 			var close = get_node("closing blinds")
 			close.play()
-			await get_tree().create_timer(3).timeout #wait that many seconds
+			await get_tree().create_timer(1).timeout #wait that many seconds
 			#set screen back to normal and get rid of the text
 			var white = get_node("white")
 			var black = get_node("black")
@@ -123,7 +123,9 @@ func life_lost(way) -> void:
 		lives.set_frame(o+1)
 	else:
 		var popupSound = get_node("popup sound")
+		var mom = get_node("blindsmom")
 		popupSound.volume_db = -30.0
+		mom.volume_db = -30.0
 		loseHeart.play()
 		lives.set_frame(o+1)
 		await get_tree().create_timer(1.5).timeout #waits

@@ -470,7 +470,8 @@ stretch_mode = 5
 position = Vector2(137.125, 324.703)
 scale = Vector2(0.902219, 1.15576)
 sprite_frames = SubResource("SpriteFrames_n4ag8")
-frame_progress = 0.842087
+autoplay = "default"
+frame_progress = 0.753349
 
 [node name="LinkButton" type="LinkButton" parent="Ad1"]
 offset_left = -123.0
@@ -483,7 +484,8 @@ uri = "https://www.petvalu.ca/product/performatrin-prime-sensitive-skin-stomach-
 position = Vector2(1015.5, 324.75)
 scale = Vector2(0.570332, 0.94952)
 sprite_frames = SubResource("SpriteFrames_s0e00")
-frame_progress = 0.0229825
+autoplay = "default"
+frame_progress = 0.651296
 
 [node name="LinkButton" type="LinkButton" parent="Ad2"]
 offset_left = -199.0
